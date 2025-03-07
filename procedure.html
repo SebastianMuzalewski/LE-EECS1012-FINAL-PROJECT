@@ -4,21 +4,38 @@
 	<meta charset="UTF-8">
 	<title> Procedure List Page </title>
     <link rel="stylesheet" type="text/css" href="styles/procedure.css" title="style" />
-</head>
-<body>
-    <nav>
-        <ul>
-            <li><a href="calendar.html">Calendar</a></li>
-            <li><a href="patientForm.html">Patient Form Submission</a></li>
-            <li><a href="patientSearchModify.html">Patient Search & Modify</a></li>
-            <li><a href="procedure.html">Procedure information</a></li>
-            <li><a href="aboutUs.html">About Us</a></li>
-        </ul>
-    </nav>
-<header>
-    <h1> Procedure List </h1>
-</header>
+    <script src="scripts/navbarToggle.js"></script>
+    <header>
+        <h1> Procedure List </h1>
+    </header>
+        <img id="nav-hamburger-hidden" src="images/navbar/hamburger.png" onclick="toggleNavbar()" alt="temporary Img">
+        <nav id = "navbarToggle">
+            <img id="nav-img-title" src="images/navbar/tempImg2.png" alt="temporary Img">
+            <img id="nav-hamburger" src="images/navbar/hamburger.png" onclick="toggleNavbar()" alt="temporary Img">
+            <ul >
+                <li><img src="images/navbar/tempImg2.png" alt="Temporary img"><a href="calendar.html">Calendar</a></li>
+                <li><img src="images/navbar/tempImg2.png" alt="Temporary img"><a href="patientForm.html">Patient Form Submission</a></li>
+                <li><img src="images/navbar/tempImg2.png" alt="Temporary img"><a href="patientSearchModify.html">Patient Search & Modify</a></li>
+                <li><img src="images/navbar/tempImg2.png" alt="Temporary img"><a href="procedure.html">Procedure information</a></li>
+                <li><img src="images/navbar/tempImg2.png" alt="Temporary img"><a href="aboutUs.html">About Us</a></li>
+            </ul>
+            <ul id="sideFeatures">
+                <li id="appearanceToggleName">Appearance 
+                    <br>
+                    <input type="checkbox"  id="appearanceToggle">
+                    <span id="slider"></span>
+                </li>
 
+                <li id="languageToggleName">Language</li>
+                    <select id="languageToggle">
+                        <option>English</option>
+                        <option>TBD</option>
+                        <option>TBD</option>
+                        <option>TBD</option>
+                    </select>
+            </ul>
+
+        </nav>
     <main>
     </main>
 
