@@ -4,18 +4,50 @@
 	<meta charset="UTF-8">
 	<title> Patient Submission Form Page </title>
     <link rel="stylesheet" type="text/css" href="styles/patientForm.css" title="style" />
+    <script src="scripts/navbarToggle.js"></script>
 </head>
-<nav>
-    <ul>
-        <li><a href="calendar.html">Calendar</a></li>
-        <li><a href="patientForm.html">Patient Form Submission</a></li>
-        <li><a href="patientSearchModify.html">Patient Search & Modify</a></li>
-        <li><a href="procedure.html">Procedure information</a></li>
-        <li><a href="aboutUs.html">About Us</a></li>
-    </ul>
-</nav>
-<header>
-    <h1> Patient Submission </h1>
-</header>
+    <body>
+        <header>
+            <h1> Patient Submission </h1>
+        </header>
+        <img id="nav-hamburger-hidden" src="images/navbar/hamburger.png" onclick="toggleNavbar()" alt="temporary Img">
+        <nav id = "navbarToggle">
+            <img id="nav-img-title" src="images/navbar/tempImg2.png" alt="temporary Img">
+            <img id="nav-hamburger" src="images/navbar/hamburger.png" onclick="toggleNavbar()" alt="temporary Img">
+            <ul >
+                <li><img src="images/navbar/tempImg2.png" alt="Temporary img"><a href="calendar.html">Calendar</a></li>
+                <li><img src="images/navbar/tempImg2.png" alt="Temporary img"><a href="patientForm.html">Patient Form Submission</a></li>
+                <li><img src="images/navbar/tempImg2.png" alt="Temporary img"><a href="patientSearchModify.html">Patient Search & Modify</a></li>
+                <li><img src="images/navbar/tempImg2.png" alt="Temporary img"><a href="procedure.html">Procedure information</a></li>
+                <li><img src="images/navbar/tempImg2.png" alt="Temporary img"><a href="aboutUs.html">About Us</a></li>
+            </ul>
+            <ul id="sideFeatures">
+                <li id="appearanceToggleName">Appearance 
+                    <br>
+                    <input type="checkbox"  id="appearanceToggle">
+                    <span id="slider"></span>
+                </li>
 
+                <li id="languageToggleName">Language</li>
+                    <select id="languageToggle">
+                        <option>English</option>
+                        <option>TBD</option>
+                        <option>TBD</option>
+                        <option>TBD</option>
+                    </select>
+            </ul>
+
+        </nav>
+        <main>
+        </main>
+    
+        <footer>
+            <img src="images/footer/tempImg.png" alt="temporary Img">
+            <h2>Contact info</h2>
+            <p>Location: 0000 Example Street Ave</p>
+            <p>Main Number: 123-456-7890</p>
+            <p>Technical Support: 012-345-6789</p>
+            <p id="Copyright">Copyright © 2025 Hardcoders®. All rights reserved</p>
+        </footer>
+    </body>
 </html>

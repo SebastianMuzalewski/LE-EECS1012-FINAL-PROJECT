@@ -1,4 +1,161 @@
-* {
-	background-color:#71BBB2;
-    color: #efe9de;
-  }
+/* patientForm Styles */
+
+/* Affects Whole Page*/ 
+
+*{
+  color: #efe9de;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color:#27445D;
+  overflow: hidden;
+}
+
+main {
+  flex: 1;
+}
+
+/** header **/
+header {
+  text-align: center;
+}
+
+/** navbar styles **/
+/*** Affects whole navbar ***/
+nav {
+ display: flex;
+ flex-direction: column;
+ width: 185px;
+ height: calc(100vh - 125px);
+ font-size: smaller;
+ border: #27445D;
+ position: absolute;
+ border-right: solid;
+ border-bottom: solid;
+ border-top: solid;
+ left: 0px;
+ top: 0px;
+ background-color:#497d74;
+}
+
+nav > ul {
+  list-style-type: none;
+  text-align: left;
+  border-bottom: solid;
+  line-height: 2;
+  display: flex;
+  flex-direction: column;
+  padding-left: 0px;
+}
+
+ul > li {
+  border-top: solid;
+  text-align: left;
+  padding-left: 15px;
+}
+
+li > img {
+  width: 20px;
+  height: 20px;
+  top: 05px;
+  right: 10px;
+  position: relative;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:hover{
+  color:black
+}
+
+/*** navbar title ***/
+
+#nav-hamburger-hidden {
+  width: 35px;
+  height: 35px;
+  margin-left: 10px;
+  margin-bottom: -05px;
+  position:fixed;
+}
+
+#nav-img-title {
+  width: 35px;
+  height: 35px;
+  left: 50px;
+  margin-left: 10px;
+  margin-top: 05px;
+  margin-bottom: -05px;
+}
+
+#navbarToggle.active {
+  display: none;
+}
+
+#nav-hamburger {
+  width: 35px;
+  height: 35px;
+  left: 145px;
+  margin-right: 10px;
+  margin-top: 05px;
+  position: absolute;
+}
+
+/*** navbar bottom ***/
+
+#sideFeatures {
+  margin-top: auto;
+}
+
+#appearanceToggleName, #languageToggleName {
+  text-align: center;
+  padding-left: 0px;
+  line-height: 2;
+}
+
+#appearanceToggle {
+  text-align: center;
+  margin-top: 5px;
+}
+
+#appearanceToggle input {
+  text-align: center;
+  margin-top: 5px;
+}
+
+#languageToggle {
+  margin: auto;
+  margin-bottom: 30px;
+  width: 60%;
+  background-color: #27445D;
+  color:#efe9de
+}
+
+/** footer styles **/
+footer {
+  text-align: center;
+  line-height: 0.2;
+  border-top: solid;
+  background-color:#71bbb2;
+  left: 0px;
+  bottom: 0px;
+  position: fixed;
+  width: 100%;
+}
+
+footer > img {
+  width: 75px;
+  height: 75px;
+  position: absolute;
+  left: 35px;
+  bottom: 35px;
+}
+
+#Copyright {
+  float: right;
+  margin-right: 10px;
+}
