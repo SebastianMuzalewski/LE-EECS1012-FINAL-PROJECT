@@ -20,6 +20,11 @@ main {
 /** header **/
 header {
   text-align: center;
+  transform: translateX(90px);
+}
+
+body.navbar-closed header {
+  transform: translateX(0px);
 }
 
 /** navbar styles **/
