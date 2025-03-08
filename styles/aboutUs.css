@@ -15,6 +15,7 @@ body {
 
 main {
   flex: 1;
+  overflow: hidden; 
 }
 
 /** header **/
@@ -28,12 +29,12 @@ body.navbar-closed header {
 }
 
 /** navbar styles **/
-/*** Affects whole navbar ***/
+
 nav {
  display: flex;
  flex-direction: column;
  width: 185px;
- height: calc(100vh - 125px);
+ height: calc(100vh - 70px);
  font-size: smaller;
  border: #27445D;
  position: absolute;
@@ -87,13 +88,25 @@ a:hover{
   position:fixed;
 }
 
+#banner-leaf {
+  position:absolute;
+  width: 75px;
+  height: 35px;
+  left: 0px;
+  top: 5px;
+  border-radius: 0px 50px 50px 0px;
+  border: 2px solid #d2d2d2;
+  border-left: none;
+  background-color: #497d74
+}
+
 #nav-img-title {
   width: 35px;
   height: 35px;
-  left: 50px;
-  margin-left: 10px;
+  left: 135px;
+  margin-right: 10px;
   margin-top: 05px;
-  margin-bottom: -05px;
+  position: absolute;
 }
 
 #navbarToggle.active {
@@ -103,13 +116,14 @@ a:hover{
 #nav-hamburger {
   width: 35px;
   height: 35px;
-  left: 145px;
-  margin-right: 10px;
+  left: 50px;
+  margin-left: 10px;
   margin-top: 05px;
-  position: absolute;
+  margin-bottom: -05px; 
 }
 
-/*** navbar bottom ***/
+/** Side features **/
+/*** language selector ***/
 
 #sideFeatures {
   margin-top: auto;
@@ -139,31 +153,8 @@ a:hover{
   color:#efe9de
 }
 
-/** footer styles **/
-footer {
-  text-align: center;
-  line-height: 0.2;
-  border-top: solid;
-  background-color:#71bbb2;
-  left: 0px;
-  bottom: 0px;
-  position: fixed;
-  width: 100%;
-}
+/***slider toggle animation***/
 
-footer > img {
-  width: 75px;
-  height: 75px;
-  position: absolute;
-  left: 35px;
-  bottom: 35px;
-}
-
-#Copyright {
-  float: right;
-  margin-right: 10px;
-}
-/***slider animation***/
 .slider{
   display: inline-block;
   background-color: #d2d2d2;
@@ -193,4 +184,44 @@ input:checked+.slider::before{
 }
 #appearanceToggle{
   display: none;
+}
+
+/** footer styles **/
+footer {
+  text-align: center;
+  border-top: solid;
+  background-color: #71bbb2;
+  position: absolute;
+  width: 100%;
+  left: 0px;
+  bottom: 0px;
+}
+
+footer > img {
+  width: 50px;
+  height: 50px;
+  position: relative;
+  float: left;
+  margin-right: 10px;
+  left: 65px;
+  top: 15px;
+}
+
+.info {
+  margin-right: 20px;
+  display: inline-block;
+  justify-content: center;
+  position: relative;
+  left: 11%;
+  bottom: 20px;
+}
+
+#footerTitle {
+  bottom: 15px;
+  position: relative;
+}
+
+#Copyright {
+  float: right;
+  margin-right: 10px;
 }
