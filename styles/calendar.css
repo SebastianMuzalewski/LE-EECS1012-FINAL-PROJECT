@@ -21,10 +21,9 @@ overflow: hidden;
 /** header **/
 header {
 text-align: center;
-/*transform: translateX(90px);*/
 margin-left: 185px;
 }
-/*main*/
+/** main* */
 main{
   text-align: center;
   margin-left: 185px;
