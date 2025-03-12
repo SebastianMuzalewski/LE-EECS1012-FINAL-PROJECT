@@ -7,3 +7,13 @@ function toggleNavbar() {
     navbar.classList.toggle('active'); 
     body.classList.toggle('navbar-closed');
 }
+
+function subClick(){
+    
+    document.getElementById('alertMsg').style.display = 'block';
+
+    document.getElementById('closebtn').onclick = function() {
+        document.getElementById('alertMsg').style.display='none';
+    };
+    
+}
