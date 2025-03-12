@@ -225,3 +225,100 @@ position: relative;
 float: right;
 margin-right: 10px;
 }
+
+/* Main content */
+
+main {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 20px;
+  padding: 20px
+}
+
+/** Form content **/
+
+form {
+  margin-top: -20px;
+  transform: translateX(170px);
+  width: 88%;
+  display: flex;
+  gap: 20px;
+}
+
+#leftSide, #rightSide {
+  flex: 1;
+  padding: 20px;
+  /* border: 2px solid black; */
+  min-height: 475px;
+}
+
+body.navbar-closed form {
+  transform: translateX(0px);
+  width: 100%;
+}
+
+input, select, textarea {
+  width: 50%;
+  padding: 5px;
+  margin-bottom: 5px;
+  display: block;
+  color: black;
+}
+
+textarea {
+  height: 120px;
+  resize: none;
+}
+
+#topTitle {
+  margin: 0 0 10px 0;
+}
+
+button, select {
+  width: 52%;
+  height: 25px;
+}
+
+button {
+  background-color:#497d74;
+  color:#efe9de;
+}
+
+option {
+  background-color: white;
+  color: black
+}
+
+select, #dateTime {
+  color: #757575;
+  background-color: white;
+}
+
+#creditCardHolder {
+  text-transform: uppercase;
+}
+
+/* Custom Alert */
+
+#alertMsg {
+  position: fixed;
+  top:20px;
+  padding: 20px;
+  background-color: #497d74;
+  color: #efe9de;
+  margin-bottom: 15px;
+  z-index: 1000;
+  transform: translateX(150%);
+  display: none;
+  width: 300px;
+}
+
+#closebtn {
+  margin-left:15px;
+  color: black;
+  font-weight: bold;
+  float: right;
+  line-height: 20px;
+  cursor: pointer;
+}
