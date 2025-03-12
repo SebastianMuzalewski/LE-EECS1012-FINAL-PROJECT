@@ -21,11 +21,18 @@ overflow: hidden;
 /** header **/
 header {
 text-align: center;
-transform: translateX(90px);
+/*transform: translateX(90px);*/
+margin-left: 185px;
+}
+/*main*/
+main{
+  text-align: center;
+  margin-left: 185px;
 }
 
-body.navbar-closed header {
-transform: translateX(0px);
+body.navbar-closed header,
+body.navbar-closed main {
+margin-left:0px;
 }
 
 /** navbar styles **/
@@ -56,7 +63,7 @@ flex-direction: column;
 padding-left: 0px;
 }
 
-ul > li {
+nav >ul > li {    /**should be a child of nav so it won't affect on main**/
 border-top: solid;
 text-align: left;
 padding-left: 15px;
@@ -224,4 +231,60 @@ position: relative;
 #Copyright {
 float: right;
 margin-right: 10px;
+}
+/***main***/
+
+
+
+/**date info function bar**/
+
+.date-info {
+  display: flex;
+  align-items: center;
+  justify-content: center;  
+  position: relative;
+  padding: 10px;
+}
+
+.function-box {
+  position: absolute;
+  left: 10px;                
+  display: flex;
+  gap: 8px;                  
+  align-items: center;
+}
+
+.function-box img {
+  width: 18px;              
+  height: 18px;
+}
+
+.date-text {
+  text-align: center;
+  font-weight: bold;
+}
+
+.month-week-selector {
+  position: absolute;
+  right: 10px;                 
+  background-color: black;              
+  border-radius: 25px;
+  padding: 5px 10px;
+  color: white;
+  border: none;
+}
+
+.function-box button {
+  width: 24px;
+  height: 24px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 2px;
+}
+
+.function-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
