@@ -258,7 +258,7 @@ body.navbar-closed form {
   width: 100%;
 }
 
-input, select, textarea {
+input, #appointmentType, textarea {
   width: 50%;
   padding: 5px;
   margin-bottom: 5px;
@@ -275,7 +275,7 @@ textarea {
   margin: 0 0 10px 0;
 }
 
-button, select {
+button, #appointmentType {
   width: 52%;
   height: 25px;
 }
@@ -290,7 +290,7 @@ option {
   color: black
 }
 
-select, #dateTime {
+#appointmentType, #dateTime {
   color: #757575;
   background-color: white;
 }
@@ -303,22 +303,53 @@ select, #dateTime {
 
 #alertMsg {
   position: fixed;
-  top:20px;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
   padding: 20px;
   background-color: #497d74;
   color: #efe9de;
   margin-bottom: 15px;
   z-index: 1000;
-  transform: translateX(150%);
   display: none;
   width: 300px;
+  border-style: solid;
+  border-color:#71bbb2;
 }
 
-#closebtn {
-  margin-left:15px;
+body.navbar-closed #alertMsg {
+  align-items: center;
+  top: 20px;
+  left: 50%;
+}
+
+#cornerClose {
+  position: absolute;
   color: black;
   font-weight: bold;
-  float: right;
+  top: 2.5px;
+  right: 7.5px;
   line-height: 20px;
   cursor: pointer;
+}
+
+#btnClose {
+  transform: translateX(120%);
+  background-color: #27445D;
+  width: 30%;
+  height: 30px;
+}
+
+#subInfoName, #subInfoTime {
+  font-size: 0.8em;
+  transform: translateX(15%);
+  bottom: 15px;
+  position: relative;
+}
+
+#alertTitle {
+  position: relative;
+  transform: translateX(5%);
+  bottom: 15px;
+  
 }

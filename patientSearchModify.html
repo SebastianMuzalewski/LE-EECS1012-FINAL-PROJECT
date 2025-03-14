@@ -69,7 +69,7 @@
                 <label id="textTitle">Previous Surgeries/Procedures</label>
                 <textarea></textarea>
                 <button id='subSaveAlert' >Save</button>
-                <button id='subDeleteAlert' >Delete</button>
+                <button id='subDeleteAlert' onclick="subDeleteClick()" >Delete</button>
             </div>
             <div id="rightSide">
                 <input type="text" id="searchBar" type="text" maxlength="35" placeholder="Search patient by First Name">
@@ -101,8 +101,21 @@
                 </table>
             </div>
             </form>
-        </main>
 
+            <div id="alertMsgWarn">
+                <span id="cornerCloseWarn">&times;</span>
+                <h1 id="alertTitle">WARNING!</h1>
+                <p id="subInfoWarn">Are you sure you want to delete (Patient Name 01) from the schedule?</p>
+                <button id="btnCloseYes">Yes</button>
+                <button id="btnCloseNo">No</button>
+            </div>
+
+            <div id="alertMsgDelete">
+                <span id="cornerCloseDelete">&times;</span>
+                <p id="subInfo">The patient appointment from the schedule has been deleted.</p>
+                <button id="btnClose">Ok</button>
+            </div>
+        </main>
     <footer>
         <img src="images/footer/tempImg.png" alt="temporary Img">
         <h2 id="footerTitle">Contact info</h2>
