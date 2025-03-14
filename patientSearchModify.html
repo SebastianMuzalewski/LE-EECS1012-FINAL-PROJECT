@@ -39,15 +39,77 @@
 
         </nav>
         <main>
+            <form>
+                <div id="leftSide">
+            <h2 id="topTitle">Patient Details</h2>
+                <input id="firstName" placeholder="First Name" type="text" maxlength="35" required>
+                <input id="lastName" placeholder="Last Name" type="text" maxlength="35" required>
+                <input id="phoneNum" placeholder="Phone Number" type="tel" maxlength="16" pattern="\+1 \d{3}-\{3}-\d{4}" required>
+                <input id="address" placeholder="Address" type="text" maxlength="35" required>
+                <input id="zipCode" placeholder="Postal Code" maxlength="7" pattern="[A-Za-z]\d[A-Za-z]\d[A-Za-z]\d" required>
+            <h2>Billing information</h2>
+                <input id="insuranceName" type="text" maxlength="35" placeholder="Insurance Provider">
+                <input id="billing" placeholder="Billing Address" type="text" maxlength="35" required>
+                <input id="payMethod" placeholder="Payment method" type="text" maxlength="16" required>
+                <input id="cardNum" placeholder="Card Number" type="text"  maxlength="16" pattern="\d{4} \d{4} \d{4} \d{4}" required>
+                <input id="creditCardHolder" placeholder="Card Holder Name" type="text" maxlength="70" required>
+                <input id="cvv" placeholder="Security Digits" type="password" maxlength="3" required>
+            <h2 id="topTitle">Appointment details</h2>
+                <input id="dateTime" type="datetime-local" placeholder="Date & Time" required>
+                <select id="appointmentType" placeholder="Appointment Type" required>
+                    <option value="" disabled selected hidden>Appointment Type</option>
+                    <option>Cleaning</option>
+                    <option>Filling</option>
+                    <option>Emergency</option>
+                <input id="preDentist" type="text" maxlength="16" placeholder="Preferred Dentist">
+            <h2>Medical Details</h2>
+                <input type="text" placeholder="Allergies">
+                <input type="text" placeholder="Current Medications">
+                <input placeholder="Medical Conditions">
+                <label id="textTitle">Previous Surgeries/Procedures</label>
+                <textarea></textarea>
+                <button id='subSaveAlert' >Save</button>
+                <button id='subDeleteAlert' >Delete</button>
+            </div>
+            <div id="rightSide">
+                <input type="text" id="searchBar" type="text" maxlength="35" placeholder="Search patient by First Name">
+                <table id="patientTable">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Date & Time</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Patient Name 01</td>
+                            <td>MM/dd/20yy hh:mm</td>
+                        </tr>
+                        <tr>
+                            <td>Patient Name 02</td>
+                            <td>MM/dd/20yy hh:mm</td>
+                        </tr>
+                        <tr>
+                            <td>Patient Name 03</td>
+                            <td>MM/dd/20yy hh:mm</td>
+                        </tr>
+                        <tr>
+                            <td>Patient Name 04</td>
+                            <td>MM/dd/20yy hh:mm</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            </form>
         </main>
 
     <footer>
         <img src="images/footer/tempImg.png" alt="temporary Img">
         <h2 id="footerTitle">Contact info</h2>
-                <span class="info">Location: 0000 Example Street Ave</span>
-                <span class="info">Main Number: 123-456-7890</span>
-                <span class="info">Technical Support: 012-345-6789</span>
+            <span class="info">Location: 0000 Example Street Ave</span>
+            <span class="info">Main Number: 123-456-7890</span>
+            <span class="info">Technical Support: 012-345-6789</span>
             <span id="Copyright">Copyright © 2025 Hardcoders®. All rights reserved</span>
-        </footer>
-</body>
+    </footer>
+    </body>
 </html>

@@ -249,7 +249,7 @@ form {
 #leftSide, #rightSide {
   flex: 1;
   padding: 20px;
-  /* border: 2px solid black; */
+  border: 2px solid black;
   min-height: 475px;
 }
 
