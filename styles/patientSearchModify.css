@@ -306,7 +306,7 @@ body.navbar-closed form {
   width: 100%;
 }
 
-input, select, textarea {
+input, #appointmentType, textarea {
   width: 50%;
   padding: 5px;
   margin-bottom: 5px;
@@ -323,7 +323,7 @@ textarea {
   margin: 0 0 10px 0;
 }
 
-button, select {
+button, #appointmentType {
   width: 52%;
   height: 25px;
 }
@@ -353,25 +353,75 @@ select, #dateTime {
 
 /* Custom Alert */
 
-#alertMsg {
+#alertMsgWarn, #alertMsgDelete {
   position: fixed;
-  top:20px;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
   padding: 20px;
   background-color: #497d74;
   color: #efe9de;
   margin-bottom: 15px;
   z-index: 1000;
-  transform: translateX(150%);
   display: none;
   width: 300px;
+  border-style: solid;
+  border-color:#71bbb2;
+  height: 150px;
 }
 
-#closebtn {
-  margin-left:15px;
+#cornerCloseWarn, #cornerCloseDelete {
+  position: absolute;
   color: black;
   font-weight: bold;
-  float: right;
+  top: 2.5px;
+  right: 7.5px;
   line-height: 20px;
   cursor: pointer;
+}
+
+#btnClose {
+  transform: translateX(100%);
+  background-color: #27445D;
+  width: 30%;
+  height: 30px;
+  bottom: 25px;
+  position: absolute;
+}
+
+#btnCloseYes, #btnCloseNo {
+  position: absolute;
+  background-color: #27445D;
+  width: 30%;
+  height: 30px;
+  bottom: 25px;
+  
+}
+
+#btnCloseYes {
+  transform: translateX(25%);
+}
+
+#btnCloseNo {
+  transform: translateX(175%);
+}
+
+#subInfo {
+  text-align: center;
+  position: relative;
+}
+
+#subInfoWarn {
+  text-align: center;
+  position: relative;
+  bottom: 30px;
+}
+
+
+#alertTitle {
+  position: relative;
+  text-align: center;
+  bottom: 15px;
+  
 }
 
