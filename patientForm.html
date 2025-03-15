@@ -41,29 +41,67 @@
         <main>
             <form>
                 <div id="leftSide">
-            <h2 id="topTitle">Patient Details</h2>
-                <input id="firstName" placeholder="First Name" type="text" maxlength="35" required>
-                <input id="lastName" placeholder="Last Name" type="text" maxlength="35" required>
-                <input id="phoneNum" placeholder="Phone Number" type="tel" maxlength="16" pattern="\+1 \d{3}-\{3}-\d{4}" required>
-                <input id="address" placeholder="Address" type="text" maxlength="35" required>
-                <input id="zipCode" placeholder="Postal Code" maxlength="7" pattern="[A-Za-z]\d[A-Za-z]\d[A-Za-z]\d" required>
-            <h2>Billing information</h2>
-                <input id="insuranceName" type="text" maxlength="35" placeholder="Insurance Provider">
-                <input id="billing" placeholder="Billing Address" type="text" maxlength="35" required>
-                <input id="payMethod" placeholder="Payment method" type="text" maxlength="16" required>
-                <input id="cardNum" placeholder="Card Number" type="text"  maxlength="16" pattern="\d{4} \d{4} \d{4} \d{4}" required>
-                <input id="creditCardHolder" placeholder="Card Holder Name" type="text" maxlength="70" required>
-                <input id="cvv" placeholder="Security Digits" type="password" maxlength="3" required>
-            </div>
+                    <h2 id="topTitle">Patient Details</h2>
+                    <div id="notifContain">
+                        <input id="firstName" placeholder="First Name" type="text" maxlength="35" required>
+                        <img id="notifIcon" src="images/patientForm/warning.png">
+                    </div>
+                    <div id="notifContain">  
+                        <input id="lastName" placeholder="Last Name" type="text" maxlength="35" required>
+                        <img id="notifIcon" src="images/patientForm/warning.png">
+                    </div>  
+                    <div id="notifContain"> 
+                        <input id="phoneNum" placeholder="Phone Number" type="tel" maxlength="15" pattern="^\+1\s\d{3}-\d{3}-\d{4}$" title="Required Input: +1 234-567-8910"  required> <!-- Valid: +1 123-456-7890 -->
+                        <img id="notifIcon" src="images/patientForm/warning.png">
+                    </div>
+                    <div id="notifContain"> 
+                        <input id="address" placeholder="Address" type="text" maxlength="35" required>
+                        <img id="notifIcon" src="images/patientForm/warning.png">
+                    </div>
+                    <div id="notifContain"> 
+                        <input id="zipCode" placeholder="Postal Code" maxlength="7" pattern="[A-Za-z]\d[A-Za-z] \d[A-Za-z]\d" title="Required Input: A1B 2C3" required> <!-- Valid: A1B 2C3 -->
+                        <img id="notifIcon" src="images/patientForm/warning.png">
+                    </div>
+                    <h2>Billing information</h2>
+                        <input id="insuranceName" type="text" maxlength="35" placeholder="Insurance Provider">
+                    <div id="notifContain"> 
+                        <input id="billing" placeholder="Billing Address" type="text" maxlength="35" required>
+                        <img id="notifIcon" src="images/patientForm/warning.png">
+                    </div>
+                    <div id="notifContain">
+                        <input id="payMethod" placeholder="Payment method" type="text" maxlength="16" required>
+                        <img id="notifIcon" src="images/patientForm/warning.png">
+                    </div>
+                    <div id="notifContain"> 
+                        <input id="cardNum" placeholder="Card Number" type="text"  maxlength="19" pattern="\d{4}-\d{4}-\d{4}-\d{4}" title="Required Input: 1234-5678-9012-3456" required> <!-- Valid: 1234-5678-9012-3456 -->
+                        <img id="notifIcon" src="images/patientForm/warning.png">
+                    </div>
+                    <div id="notifContain"> 
+                        <input id="creditCardHolder" placeholder="Card Holder Name" type="text" maxlength="70" required>
+                        <img id="notifIcon" src="images/patientForm/warning.png">
+                    </div>
+                    <div id="notifContain">
+                        <input id="cvv" placeholder="CVV" type="text" pattern="\d{3}" maxlength="4" required>
+                        <img id="notifIcon" src="images/patientForm/question-sign.png">
+                        <div id="notifMsg">3 or 4 digit code on back of Credit Card</div>
+                    </div>
+                </div>
 
             <div id="rightSide">
             <h2 id="topTitle">Appointment details</h2>
+            <div id="notifContain">
                 <input id="dateTime" type="datetime-local" placeholder="Date & Time" required>
+                <img id="notifIconConflict" src="images/patientForm/conflict.png">
+                <div id="notifMsgConf">Schedule Confliction</div>
+            </div>
+            <div id="notifContain">
+                <img id="notifIconSelect" src="images/patientForm/warning.png">
                 <select id="appointmentType" placeholder="Appointment Type" required>
                     <option value="" disabled selected hidden>Appointment Type</option>
                     <option>Cleaning</option>
                     <option>Filling</option>
                     <option>Emergency</option>
+            
                 <input id="preDentist" type="text" maxlength="16" placeholder="Preferred Dentist">
             <h2>Medical Details</h2>
                 <input type="text" placeholder="Allergies">
