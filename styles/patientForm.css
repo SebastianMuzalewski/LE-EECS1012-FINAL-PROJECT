@@ -249,7 +249,7 @@ form {
 #leftSide, #rightSide {
   flex: 1;
   padding: 20px;
-  border: 2px solid black;
+  /* border: 2px solid black; */
   min-height: 475px;
 }
 
@@ -297,6 +297,10 @@ option {
 
 #creditCardHolder {
   text-transform: uppercase;
+}
+
+#cvv {
+  -webkit-text-security: disc;
 }
 
 /* Custom Alert */
@@ -351,5 +355,83 @@ body.navbar-closed #alertMsg {
   position: relative;
   transform: translateX(5%);
   bottom: 15px;
-  
+}
+
+#notifContain {
+  position: relative;
+  display: inline-block;  
+  width: 100%;
+}
+
+#notifIcon {
+  position: absolute;
+  top: 50%;
+  left: 48%;
+  transform: translateY(-55%);
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  z-index: 1000;
+}
+
+#notifIconConflict {
+  position: absolute;
+  top: 50%;
+  left: 44%;
+  transform: translateY(-55%);
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  z-index: 1000;
+}
+
+#notifIconSelect {
+  position: absolute;
+  top: 3.5%;
+  left: 48%;
+  transform: translateY(-55%);
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  z-index: 1000;
+}
+
+#notifMsg {
+  visibility: hidden;
+  position: absolute;
+  bottom: 5px;
+  left: 55%;
+  width: 45%;
+  background-color: darkgoldenrod;
+  color: white;
+  padding: 5px;
+  border-radius: 5px;
+  white-space: nowrap;
+  text-align: center;
+}
+
+#notifIcon:hover + #notifMsg {
+  visibility: visible;
+}
+
+#notifMsgConf {
+  visibility: hidden;
+  position: absolute;
+  bottom: 5px;
+  left: 55%;
+  width: 45%;
+  background-color: orange;
+  color: white;
+  padding: 5px;
+  border-radius: 5px;
+  white-space: nowrap;
+  text-align: center;
+}
+
+#notifIcon:hover + #notifMsgConf {
+  visibility: visible;
+}
+
+#notifIconConflict:hover + #notifMsgConf {
+  visibility: visible;
 }
