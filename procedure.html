@@ -2,6 +2,9 @@
 <html lang="En">
 <head>
 	<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
 	<title> Procedure List Page </title>
     <link rel="stylesheet" type="text/css" href="styles/procedure.css" title="style" />
     <script src="scripts/procedure.js"></script>
@@ -39,6 +42,68 @@
 
         </nav>
     <main>
+       <section id="services-currently-offered">
+            <h2>Services currently offered</h2>
+                <ul>
+                    <li onclick="showcleaningDetails()">Cleaning</li>
+                    <li onclick="showfillingDetails()">Filling</li>
+                    <li onclick="showemergencyDetails()">Emergency</li>
+                </ul>
+        </section>
+        <div id="details-about-service">
+            <h2 id="detail-about-service-name">Details about Cleaning</h2>
+            <section>
+                <div class="details-about-service-class">
+                <span><b>Dentists Avaliable:</b></span>
+            </div>
+
+            <div class="details-about-service-span">
+            
+                <p id="details-dentists-available">
+                    Dr. Shawn <br> 
+                    Dr. Edward <br>
+                </p>
+            </div>
+                <div class="details-about-service-class">
+                <span><b>Average Fee:</b></span> 
+                </div>
+                <div class="details-about-service-span">
+                <p id="details-average-fee">
+                    $250 flat fee, Tax not included;
+                </p>
+                </div>
+                
+
+                <div class="details-about-service-class">
+                <span><b>Insurance Coverage:</b></span>
+                </div>  
+                <div class="details-about-service-span">
+                <p id="detail-insurance-covereage">
+                80 percent Coverage for most insurance <br>
+                50 percent Coverage for seniors
+
+                </p>
+                </div>
+                <div class="details-about-service-class">
+                <span><b>Estimated time for completion:</b></span>
+                </div>
+                <div class="details-about-service-span">
+
+                <p id="detail-estimated-time">
+                    1-2 hour completion time
+                </p>
+                </div>
+                <div class="details-about-service-class">
+                <span><b>Additional Information</b></span>
+                </div>
+                <div class="details-about-service-span">
+                <p id="additonal-info">
+                    Please arrive atleast 30 mins earlier than your appointment to avoid any delays in the procedure
+                </p>
+                
+            </section>
+
+        </div>
     </main>
 
         <footer>
