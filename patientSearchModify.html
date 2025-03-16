@@ -40,27 +40,66 @@
         </nav>
         <main>
             <form>
-                <div id="leftSide">
+            <div id="leftSide">   
             <h2 id="topTitle">Patient Details</h2>
+            <div id="notifContain">
                 <input id="firstName" placeholder="First Name" type="text" maxlength="35" required>
+                <img id="notifIcon" src="images/patientForm/warning.png">
+            </div>
+            <div id="notifContain">  
                 <input id="lastName" placeholder="Last Name" type="text" maxlength="35" required>
-                <input id="phoneNum" placeholder="Phone Number" type="tel" maxlength="16" pattern="\+1 \d{3}-\{3}-\d{4}" required>
+                <img id="notifIcon" src="images/patientForm/warning.png">
+            </div>
+            <div id="notifContain"> 
+                <input id="phoneNum" placeholder="Phone Number" type="tel" maxlength="15" pattern="^\+1\s\d{3}-\d{3}-\d{4}$" title="Required Input: +1 234-567-8910"  required> <!-- Valid: +1 123-456-7890 -->
+                <img id="notifIcon" src="images/patientForm/warning.png">
+            </div>
+            <div id="notifContain"> 
                 <input id="address" placeholder="Address" type="text" maxlength="35" required>
-                <input id="zipCode" placeholder="Postal Code" maxlength="7" pattern="[A-Za-z]\d[A-Za-z]\d[A-Za-z]\d" required>
+                <img id="notifIcon" src="images/patientForm/warning.png">
+            </div>
+            <div id="notifContain"> 
+                <input id="zipCode" placeholder="Postal Code" maxlength="7" pattern="[A-Za-z]\d[A-Za-z] \d[A-Za-z]\d" title="Required Input: A1B 2C3" required> <!-- Valid: A1B 2C3 -->
+                <img id="notifIcon" src="images/patientForm/warning.png">
+            </div>
             <h2>Billing information</h2>
                 <input id="insuranceName" type="text" maxlength="35" placeholder="Insurance Provider">
+            <div id="notifContain"> 
                 <input id="billing" placeholder="Billing Address" type="text" maxlength="35" required>
+                <img id="notifIcon" src="images/patientForm/warning.png">
+            </div>
+            <div id="notifContain">
                 <input id="payMethod" placeholder="Payment method" type="text" maxlength="16" required>
-                <input id="cardNum" placeholder="Card Number" type="text"  maxlength="16" pattern="\d{4} \d{4} \d{4} \d{4}" required>
+                <img id="notifIcon" src="images/patientForm/warning.png">
+            </div>
+            <div id="notifContain"> 
+                <input id="cardNum" placeholder="Card Number" type="text"  maxlength="19" pattern="\d{4}-\d{4}-\d{4}-\d{4}" title="Required Input: 1234-5678-9012-3456" required> <!-- Valid: 1234-5678-9012-3456 -->
+                <img id="notifIcon" src="images/patientForm/warning.png">
+            </div>
+            <div id="notifContain"> 
                 <input id="creditCardHolder" placeholder="Card Holder Name" type="text" maxlength="70" required>
-                <input id="cvv" placeholder="Security Digits" type="password" maxlength="3" required>
+                <img id="notifIcon" src="images/patientForm/warning.png">
+            </div>
+            <div id="notifContain">
+                <input id="cvv" placeholder="CVV" type="text" pattern="\d{3}" maxlength="4" required>
+                <img id="notifIcon" src="images/patientForm/question-sign.png">
+                <div id="notifMsg">3 or 4 digit code on back of Credit Card</div>
+            </div>
             <h2 id="topTitle">Appointment details</h2>
+            <div id="notifContain">
                 <input id="dateTime" type="datetime-local" placeholder="Date & Time" required>
+                <img id="notifIconConflict" src="images/patientForm/conflict.png">
+                <div id="notifMsgConf">Schedule Confliction</div>
+            </div>
+            <div id="notifContain">
+                <img id="notifIcon" src="images/patientForm/warning.png">
                 <select id="appointmentType" placeholder="Appointment Type" required>
-                    <option value="" disabled selected hidden>Appointment Type</option>
-                    <option>Cleaning</option>
-                    <option>Filling</option>
-                    <option>Emergency</option>
+                        <option value="" disabled selected hidden>Appointment Type</option>
+                        <option>Cleaning</option>
+                        <option>Filling</option>
+                        <option>Emergency</option>
+                </select>
+            </div>
                 <input id="preDentist" type="text" maxlength="16" placeholder="Preferred Dentist">
             <h2>Medical Details</h2>
                 <input type="text" placeholder="Allergies">
@@ -71,8 +110,12 @@
                 <button id='subSaveAlert' >Save</button>
                 <button id='subDeleteAlert' onclick="subDeleteClick()" >Delete</button>
             </div>
+        </form>
             <div id="rightSide">
-                <input type="text" id="searchBar" type="text" maxlength="35" placeholder="Search patient by First Name">
+                <div id="searchContain">
+                    <img id="searchIcon" src="images/patientSearchModify/search.png">
+                    <input type="text" id="searchBar" type="text" maxlength="35" placeholder="Search patient by First Name">
+                </div>
                 <table id="patientTable">
                     <thead>
                         <tr>
@@ -82,26 +125,49 @@
                     </thead>
                     <tbody>
                         <tr>
-                            <td>Patient Name 01</td>
-                            <td>MM/dd/20yy hh:mm</td>
+                            <td id="patientName">Patient Name 01</td>
+                            <td id="assignedDateTime">MM/dd/20yy hh:mm</td>
                         </tr>
                         <tr>
-                            <td>Patient Name 02</td>
-                            <td>MM/dd/20yy hh:mm</td>
+                            <td id="patientName">Patient Name 02</td>
+                            <td id="assignedDateTime">MM/dd/20yy hh:mm</td>
                         </tr>
                         <tr>
-                            <td>Patient Name 03</td>
-                            <td>MM/dd/20yy hh:mm</td>
+                            <td id="patientName">Patient Name 03</td>
+                            <td id="assignedDateTime">MM/dd/20yy hh:mm</td>
                         </tr>
                         <tr>
-                            <td>Patient Name 04</td>
-                            <td>MM/dd/20yy hh:mm</td>
+                            <td id="patientName">Patient Name 04</td>
+                            <td id="assignedDateTime">MM/dd/20yy hh:mm</td>
                         </tr>
+                        <tr>
+                            <td id="patientName">Patient Name 05</td>
+                            <td id="assignedDateTime">MM/dd/20yy hh:mm</td>
+                        </tr>
+                        <tr>
+                            <td id="patientName">Patient Name 06</td>
+                            <td id="assignedDateTime">MM/dd/20yy hh:mm</td>
+                        </tr>
+                        <tr>
+                            <td id="patientName">Patient Name 07</td>
+                            <td id="assignedDateTime">MM/dd/20yy hh:mm</td>
+                        </tr>
+                        <tr>
+                            <td id="patientName">Patient Name 08</td>
+                            <td id="assignedDateTime">MM/dd/20yy hh:mm</td>
+                        </tr>
+                        <tr>
+                            <td id="patientName">Patient Name 09</td>
+                            <td id="assignedDateTime">MM/dd/20yy hh:mm</td>
+                        </tr>
+                        <tr>
+                            <td id="patientName">Patient Name 10</td>
+                            <td id="assignedDateTime">MM/dd/20yy hh:mm</td>
+                        </tr>
+                        
                     </tbody>
                 </table>
             </div>
-            </form>
-
             <div id="alertMsgWarn">
                 <span id="cornerCloseWarn">&times;</span>
                 <h1 id="alertTitle">WARNING!</h1>
