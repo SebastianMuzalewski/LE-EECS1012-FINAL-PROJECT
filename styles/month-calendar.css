@@ -1,0 +1,53 @@
+.month-calendar{
+    display: flex;
+    flex-direction: column;
+    
+    
+}
+.month-calendar__day-of-week-list{
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(7,minmax(0,1fr));
+    border-bottom: 2px solid white;
+    padding-bottom: 0%;
+    margin-bottom: 0px;
+    padding-left: 0%;
+    padding-right: 0%;
+    text-align: center;
+    
+}
+.month-calendar__day-list-wrapper{
+    position: relative;
+    flex: 1;
+}
+.month-calendar__day-list{
+    list-style-type:none; 
+    position: relative;
+    display:grid;
+    grid-template-columns: repeat(7,minmax(0,1fr));
+    overflow-y: auto;
+    padding-left: 0%;
+    padding-right: 0%;
+    
+}
+.month-calendar__day{
+    display: flex;
+    flex-direction: column;
+    border-right: 1px solid gray;
+    border-bottom: 1px solid gray;
+}
+.month-calendar__day:nth-child(7n){
+    border-right: 0;
+}
+.month-calendar__day-lable{
+    color: black;
+    width: 100%;
+    padding: 0.5rem 0;
+    cursor: pointer;
+    border: 0;
+}
+.month-calendar__event-list-wrapper{
+    flex-grow: 1;
+    padding-bottom: 50px;
+    background-color: white;
+}
