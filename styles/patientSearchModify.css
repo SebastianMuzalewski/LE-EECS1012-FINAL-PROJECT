@@ -14,11 +14,13 @@ background-color:#27445D;
 }
 
 main {
-flex: 1;
-overflow-y: auto;
-padding-bottom: 80px;
-padding-left: 75px;
+  gap: 20px;
+  margin-top: -20px;
+  transform: translateX(170px);
+  width: 88%;
+  display: flex;
 }
+
 
 /** header **/
 header {
@@ -231,25 +233,23 @@ margin-right: 10px;
 /** Form content **/
 
 form {
-  margin-top: -20px;
-  transform: translateX(170px);
-  width: 88%;
-  display: flex;
-  gap: 20px;
+  flex: 1;
+  padding-bottom: 80px;
+  padding-left: 75px;
 }
 
 #leftSide, #rightSide {
   flex: 1;
   padding: 20px;
-  border: 2px solid black;
+  /* border: 2px solid black; */
   min-height: 475px;
 }
 
 #leftSide {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  text-align: center;
+  align-items: left;
+  text-align: left;
 }
 
 #rightSide {
@@ -257,18 +257,22 @@ form {
   flex-direction: column;
   align-items: center;
   padding: 20px;
-  border: 2px solid black;
   min-height: 475px;
 }
 
+body.navbar-closed main {
+  transform: translateX(65px);
+  }
+
 #searchBar {
-  width: 80%;
-  padding: 10px;
+  width: 95%;
   margin-bottom: 20px;
-  font-size: 16px;
+  font-size: 15px;
   border: 2px solid black;
   color: black;
   background-color: white;
+  display: flex;
+  left: 15%;
 }
 
 table {
@@ -301,9 +305,8 @@ table {
   background-color: #497d74;
 }
 
-body.navbar-closed form {
-  transform: translateX(0px);
-  width: 100%;
+#assignedDateTime {
+  width: 30%;
 }
 
 input, #appointmentType, textarea {
@@ -342,7 +345,7 @@ option {
   color: black
 }
 
-select, #dateTime {
+#appointmentType, #dateTime {
   color: #757575;
   background-color: white;
 }
@@ -395,7 +398,6 @@ select, #dateTime {
   width: 30%;
   height: 30px;
   bottom: 25px;
-  
 }
 
 #btnCloseYes {
@@ -417,11 +419,103 @@ select, #dateTime {
   bottom: 30px;
 }
 
-
 #alertTitle {
   position: relative;
   text-align: center;
   bottom: 15px;
-  
 }
 
+#notifContain {
+  position: relative;
+  display: inline-block;  
+  width: 100%;
+}
+
+#notifIcon {
+  position: absolute;
+  top: 50%;
+  left: 48%;
+  transform: translateY(-55%);
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  z-index: 1000;
+}
+
+#notifIconConflict {
+  position: absolute;
+  top: 50%;
+  left: 44%;
+  transform: translateY(-55%);
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  z-index: 1000;
+}
+
+#notifIconSelect {
+  position: absolute;
+  top: 3.5%;
+  left: 48%;
+  transform: translateY(-55%);
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  z-index: 1000;
+}
+
+#notifMsg {
+  visibility: hidden;
+  position: absolute;
+  bottom: 5px;
+  left: 55%;
+  width: 47%;
+  background-color: darkgoldenrod;
+  color: white;
+  padding: 5px;
+  border-radius: 5px;
+  white-space: nowrap;
+  text-align: center;
+}
+
+#notifIcon:hover + #notifMsg {
+  visibility: visible;
+}
+
+#notifMsgConf {
+  visibility: hidden;
+  position: absolute;
+  bottom: 5px;
+  left: 55%;
+  width: 45%;
+  background-color: orange;
+  color: white;
+  padding: 5px;
+  border-radius: 5px;
+  white-space: nowrap;
+  text-align: center;
+}
+
+#notifIcon:hover + #notifMsgConf {
+  visibility: visible;
+}
+
+#notifIconConflict:hover + #notifMsgConf {
+  visibility: visible;
+}
+
+#searchIcon {
+  position: absolute;
+  top: 12%;
+  left: 92%;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  z-index: 1000;
+}
+
+#searchContain {
+  position: relative;
+  display: inline-block;  
+  width: 80%;
+}
