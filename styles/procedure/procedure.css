@@ -1,0 +1,99 @@
+/* procedure Styles */
+
+/* Affects Whole Page*/
+*{
+  color: #efe9de;
+}
+
+body {
+display: flex;
+flex-direction: column;
+min-height: 100vh;
+background-color:#27445D;
+overflow: hidden;
+}
+
+main {
+  flex: 1;
+display: flex;
+justify-content: space-between;
+overflow: auto;
+margin-left: 185px;
+padding: 20px;
+gap: 20px
+}
+
+body.navbar-closed main {
+  margin-left: 0;
+}
+
+/** header **/
+header {
+text-align: center;
+transform: translateX(90px);
+}
+
+body.navbar-closed header {
+transform: translateX(0px);
+}
+
+#services-currently-offered h2{
+  margin-left: 4px;
+
+
+}
+#services-currently-offered ul {
+  border-style: solid;
+  border-width: 2px;
+  list-style-type: none;
+  padding-left: 0px;
+  height: 63vh;
+  width: 45vw;
+  overflow: auto;
+}
+
+#services-currently-offered li{
+  border-style: solid;
+  text-align: left;
+  padding-top: 7px;
+  padding-bottom: 7px;
+  font-size: 20px;
+  border-width: 1px;
+}
+
+#services-currently-offered li:hover{
+  background-color: #497d74;
+}
+
+#details-about-service h2 {
+  margin-left: x;
+}
+
+#details-about-service section{
+  border-style: solid;
+  border-width: 2px;
+  text-align: left;
+  height: 63vh;
+  width: 45vw;
+  overflow: auto;
+}
+#additonal-info {
+  border-style: solid;
+  border-width: 1px;
+  margin-right: 7px;
+  height: 120px;
+  overflow: auto;
+}
+.details-about-service-class{
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  font-size:  20px;
+  padding-left: 5px;
+  background-color: #497d74;
+  color:  black;
+}
+.details-about-service-span{
+  padding-left: 6px;
+}
