@@ -1,13 +1,12 @@
-/** navbar styles **/
+/* Navbar Styling */
+/** Whole Navbar + Title **/
 
 nav {
     display: flex;
     flex-direction: column;
-    width: 185px;
-    height: calc(100vh - 70px);
+    width: 200px;
+    height: calc(100vh - 90px);
     font-size: smaller;
-    border: #27445D;
-    position: absolute;
     border-right: solid;
     border-bottom: solid;
     border-top: solid;
@@ -15,11 +14,18 @@ nav {
     top: 0px;
     background-color:#497d74;
     position: fixed;
+    transition: transform 0.3s ease-in-out;
+   }
+
+   .nav-hidden {
+    transform: translateX(-100%);
+   }
+
+   .nav-visible {
+    transform: translateX(0);
    }
    
    nav > ul {
-     list-style-type: none;
-     text-align: left;
      border-bottom: solid;
      line-height: 2;
      display: flex;
@@ -28,28 +34,72 @@ nav {
    }
    
    ul > li {
-     border-top: solid;
-     text-align: left;
-     padding-left: 15px;
+    border-top: solid;
    }
    
-   li > img {
-     width: 25px;
-     height: 25px;
-     top: 05px;
-     right: 10px;
+  .navImgSize {
+     width: 30px;
+     height: 30px;
      position: relative;
    }
-   
-   a {
-     text-decoration: none;
+       
+  .navClick:hover {
+    background-color: #27445D;
    }
-   
-   a:hover{
-     color:black
+
+   .navClick a{
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+      color: white;
+      padding: 10px;
+      cursor: pointer;
    }
-   
-   /*** navbar title ***/
+
+   .navClick a img{
+    margin-right: 10px;
+ }
+
+ #nav-img-title {
+  width: 45px;
+  height: 45px;
+  left: 135px;
+  margin-right: 10px;
+  margin-top: 2.5px;
+  position: absolute;
+}
+
+ #nav-calendar:hover img {
+  content: url('../images/navbar/postClick/calendar.png');
+  width: 30px;
+  height: 30px;
+}
+
+#nav-form:hover img {
+  content: url('../images/navbar/postClick/form.png');
+  width: 30px;
+  height: 30px;
+}
+
+#nav-database:hover img {
+  content: url('../images/navbar/postClick/database.png');
+  width: 30px;
+  height: 30px;
+}
+
+#nav-procedure:hover img {
+  content: url('../images/navbar/postClick/procedure.png');
+  width: 30px;
+  height: 30px;
+}
+
+#nav-aboutUs:hover img {
+  content: url('../images/navbar/postClick/aboutUs.png');
+  width: 30px;
+  height: 30px;
+}
+
+   /** Navbar Bookmark **/
    
    #nav-hamburger-hidden {
      width: 35px;
@@ -57,33 +107,54 @@ nav {
      margin-left: 10px;
      margin-bottom: -05px;
      position:fixed;
+     cursor: pointer;
    }
    
    #banner-leaf {
      position:fixed;
      width: 75px;
      height: 35px;
-     left: 0px;
+     left: -75px;
      top: 5px;
      border-radius: 0px 50px 50px 0px;
      border: 2px solid #d2d2d2;
      border-left: none;
-     background-color: #497d74
+     background-color: #497d74;
    }
-   
-   #nav-img-title {
-     width: 45px;
-     height: 45px;
-     left: 135px;
-     margin-right: 10px;
-     margin-top: 2.5px;
-     position: absolute;
+
+   body.navbar-close #banner-leaf {
+    margin-left: 75px;
    }
-   
+
+   body.navbar-open #banner-leaf {
+    margin-left: 0px;
+   }
+
+   body > #banner-leaf {
+    transition: margin-left 0.6s ease-in-out, background-color 0.6s ease-in-out, width 0.6s ease-in-out;
+  }
+
+  #banner-leaf:hover {
+    width: 90px;
+    background-color: #71bbb2;  
+  }
+
    #navbarToggle.active {
      display: none;
    }
    
+  body.navbar-close {
+    margin-left: 0px;
+  }
+
+  body.navbar-open {
+    margin-left: 200px;
+  }
+
+  body {
+    transition: margin-left 0.3s ease;
+  }
+
    #nav-hamburger {
      width: 35px;
      height: 35px;
@@ -91,19 +162,22 @@ nav {
      margin-left: 10px;
      margin-top: 05px;
      margin-bottom: -05px; 
+     cursor: pointer;
    }
    
    /** Side features **/
-   /*** language selector ***/
+   /*** Language selection ***/
    
    #sideFeatures {
      margin-top: auto;
+     margin-bottom: -3px;
    }
    
    #appearanceToggleName, #languageToggleName {
      text-align: center;
      padding-left: 0px;
      line-height: 2;
+     color: white;
    }
    
    #appearanceToggle {
@@ -121,14 +195,24 @@ nav {
      margin-bottom: 30px;
      width: 60%;
      background-color: #27445D;
-     color:#efe9de
+     color: white;
+     border: 2px solid #d2d2d2;
    }
-   
-   /***slider toggle animation***/
+
+   li > #languageToggle {
+    border-bottom: none;
+   }
+
+   select > option {
+    color: white;
+    background-color: #497d74;
+   }
+
+   /*** Dark Mode Button ***/
    
    .slider{
      display: inline-block;
-     background-color: #d2d2d2;
+     background-color:#71bbb2;
      align-items: center;
      width: 40px;
      height: 20px;
@@ -136,6 +220,7 @@ nav {
      position: relative;
      cursor: pointer;
    }
+   
    .slider::before {
      content: "";
      position: absolute;
@@ -147,12 +232,15 @@ nav {
      left: 1px;
      transition: 0.3s;
    }
+
    input:checked+.slider{
-     background-color: #ADD8E6;
+     background-color: #27445D;
    }
+
    input:checked+.slider::before{
      transform: translateX(20px);
    }
+
    #appearanceToggle{
      display: none;
    }

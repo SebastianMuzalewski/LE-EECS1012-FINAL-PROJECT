@@ -11,6 +11,7 @@ body {
   min-height: 100vh;
   background-color:#27445D;
   overflow: hidden;
+  margin-left: 200px;
 }
 
 main {
@@ -21,10 +22,5 @@ main {
 /** header **/
 header {
   text-align: center;
-  transform: translateX(90px);
-}
-
-body.navbar-closed header {
-  transform: translateX(0px);
 }
 
