@@ -1,0 +1,26 @@
+/* aboutUs Styles */
+
+/* Affects Whole Page*/
+*{
+    color: #efe9de;
+  }
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color:#27445D;
+  overflow: hidden;
+  margin-left: 200px;
+}
+
+main {
+  flex: 1;
+  overflow: hidden; 
+}
+
+/** header **/
+header {
+  text-align: center;
+}
+

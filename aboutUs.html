@@ -3,8 +3,12 @@
 <head>
 	<meta charset="UTF-8">
 	<title> About Us Page </title>
-    <link rel="stylesheet" type="text/css" href="styles/aboutUs.css" title="style" />
-    <script src="scripts/aboutUs.js"></script>
+    <link rel="stylesheet" type="text/css" href="styles/footer.css"/>
+    <link rel="stylesheet" type="text/css" href="styles/aboutUs/aboutUs.css"/>
+    <link rel="stylesheet" type="text/css" href="styles/navbar.css"/>
+    
+    <script src="scripts/aboutUs/aboutUs.js"></script>
+    <script src="scripts/navbarSmooth.js"></script>
 </head>
     <body>
         <header>
@@ -12,18 +16,28 @@
             <h3> The Hardcoders </h3>
         </header>
         <div id="banner-leaf"><img id="nav-hamburger-hidden" src="images/navbar/hamburger.png" onclick="toggleNavbar()" alt="temporary Img"></div>
-        <nav id = "navbarToggle">
-            <img id="nav-img-title" src="images/navbar/tempImg2.png" alt="temporary Img">
+        <nav id = "navbarToggle" class="nav-visible">
+            <img id="nav-img-title" src="images/navbar/tempLogo.png"alt="temporary Img">
             <img id="nav-hamburger" src="images/navbar/hamburger.png" onclick="toggleNavbar()" alt="temporary Img">
             <ul>
-                <li><img src="images/navbar/tempImg2.png" alt="Temporary img"><a href="calendar.html">Calendar</a></li>
-                <li><img src="images/navbar/tempImg2.png" alt="Temporary img"><a href="patientForm.html">Patient Form Submission</a></li>
-                <li><img src="images/navbar/tempImg2.png" alt="Temporary img"><a href="patientSearchModify.html">Patient Search & Modify</a></li>
-                <li><img src="images/navbar/tempImg2.png" alt="Temporary img"><a href="procedure.html">Procedure information</a></li>
-                <li><img src="images/navbar/tempImg2.png" alt="Temporary img"><a href="aboutUs.html">About Us</a></li>
+                <li id="nav-calendar" class="navClick">
+                    <a  class="pageClick" href="calendar.html"><img class="navImgSize" src="images/navbar/preClick/calendar.png" alt="calendar img">Calendar</a>
+                </li>
+                <li id="nav-form" class="navClick">
+                    <a href="patientForm.html"><img class="navImgSize" src="images/navbar/preClick/form.png" alt="form img">Patient Form Submission</a>
+                </li>
+                <li id="nav-database" class="navClick">
+                    <a href="patientSearchModify.html"><img class="navImgSize" src="images/navbar/preClick/database.png" alt="database img">Patient Search & Modify</a>
+                </li>
+                <li id="nav-procedure" class="navClick">
+                    <a href="procedure.html"><img class="navImgSize" src="images/navbar/preClick/procedure.png" alt="procedure img">Procedure information</a>
+                </li>
+                <li id="nav-aboutUs" class="navClick">
+                    <a href="aboutUs.html"><img class="navImgSize" src="images/navbar/preClick/aboutUs.png" alt="aboutUs img">About Us</a>
+                </li>
             </ul>
             <ul id="sideFeatures">
-                <li id="appearanceToggleName">Appearance 
+                <li id="appearanceToggleName">Dark Mode: <label>State</label> 
                     <br>
                     <input type="checkbox"  id="appearanceToggle">
                     <label for="appearanceToggle" class="slider"></label>
@@ -43,7 +57,7 @@
         </main>
     
         <footer>
-            <img src="images/footer/tempImg.png" alt="temporary Img">
+            <img src="images/footer/tempLogo.png" alt="temporary Img">
             <h2 id="footerTitle">Contact info</h2>
                 <span class="info">Location: 0000 Example Street Ave</span>
                 <span class="info">Main Number: 123-456-7890</span>
