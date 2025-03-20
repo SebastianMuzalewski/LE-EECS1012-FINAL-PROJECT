@@ -1,26 +1,42 @@
-/* aboutUs Styles */
+/* AboutUs Page Styling */
 
 /* Affects Whole Page*/
 *{
     color: #efe9de;
   }
 
+/** Main content **/
+
 body {
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
+  min-height: calc(100vh - 100px);
   background-color:#27445D;
   overflow: hidden;
-  margin-left: 200px;
+  margin-left: 202px;
+  margin-top: 0px;
+  margin-right: 0px;
 }
 
 main {
   flex: 1;
+  right: 0px;
   overflow: hidden; 
+  min-height: calc(100vh - 200px);
+  margin-bottom: 2.5px;
+  width: 100%;
+  border: white solid;
 }
 
-/** header **/
+/** Header Text & Content **/
+
 header {
   text-align: center;
+  height: 90px;
+}
+
+h3 {
+  bottom: 15px;
+  position: relative;
 }
 

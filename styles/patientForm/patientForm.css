@@ -1,64 +1,68 @@
-/* patientForm Styles */
+/* PatientForm Page Styling */
 
-/* Affects Whole Page*/
-*{
+/** Affects Whole Page **/
+* {
   color: #efe9de;
 }
+
+/** Main content **/
 
 body {
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
+  min-height: calc(100vh - 100px);
   background-color:#27445D;
   overflow: hidden;
-  margin-left: 200px;
+  margin-left: 202px;
+  margin-top: 0px;
+  margin-right: 0px;
 }
-
 
 main {
-flex: 1;
-overflow: hidden; 
+  flex: 1;
+  right: 0px;
+  overflow: hidden; 
+  min-height: calc(100vh - 200px);
+  margin-bottom: 2.5px;
+  width: 100%;
 }
 
-/** header **/
+/** Header Text & Content **/
+
 header {
-text-align: center;
+  text-align: center;
+  height: 90px;
 }
 
-body.navbar-closed header {
-transform: translateX(0px);
-}
-
-/* Main content */
-
-main {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  gap: 20px;
-  padding: 20px
-}
-
-/** Form content **/
-
-form {
-  margin-top: -20px;
-  transform: translateX(170px);
-  width: 88%;
-  display: flex;
-  gap: 20px;
+#splitContainer {
+  display: flex; 
+  flex-direction: row; 
+  border: white solid;
+  min-height: calc(100vh - 195px);
+  gap: 10px;
+  margin-left: 20px;
+  margin-right: 20px;
 }
 
 #leftSide, #rightSide {
   flex: 1;
   padding: 20px;
-  /* border: 2px solid black; */
-  min-height: 475px;
+  width: 48;
+  flex-direction: column;
 }
 
-body.navbar-closed form {
-  transform: translateX(0px);
-  width: 100%;
+#leftSide {
+  display: flex;
+  align-items: flex-start;
+  text-align: left;
+  border: red solid;
+}
+
+#rightSide {
+  display: flex;
+  align-items: flex-start;
+  text-align: left;
+  border: blue solid;
 }
 
 input, #appointmentType, textarea {

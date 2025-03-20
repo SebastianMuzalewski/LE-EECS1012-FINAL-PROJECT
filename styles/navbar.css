@@ -144,15 +144,17 @@ nav {
    }
    
   body.navbar-close {
+    transition: margin-left 0.5s ease-out;
     margin-left: 0px;
   }
 
   body.navbar-open {
+    transition: margin-left 0.25s ease-in;
     margin-left: 200px;
   }
 
   body {
-    transition: margin-left 0.3s ease;
+    transition: margin-left 0.1s ease;
   }
 
    #nav-hamburger {
