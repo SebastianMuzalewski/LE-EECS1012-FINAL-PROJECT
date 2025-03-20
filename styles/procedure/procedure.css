@@ -22,7 +22,7 @@ justify-content: space-between;
 overflow: auto;
 margin-left: 185px;
 padding: 20px;
-gap: 20px
+gap: 10px
 }
 
 body.navbar-closed main {
@@ -39,7 +39,7 @@ transform: translateX(0px);
 }
 
 #services-currently-offered h2{
-  margin-left: 4px;
+  margin-left: 2px;
 
 
 }
@@ -48,8 +48,8 @@ transform: translateX(0px);
   border-width: 2px;
   list-style-type: none;
   padding-left: 0px;
-  height: 63vh;
-  width: 45vw;
+  height: 62vh;
+  width: 25vw;
   overflow: auto;
 }
 
@@ -67,15 +67,15 @@ transform: translateX(0px);
 }
 
 #details-about-service h2 {
-  margin-left: x;
+  margin-left: 2px;
 }
 
 #details-about-service section{
   border-style: solid;
   border-width: 2px;
   text-align: left;
-  height: 63vh;
-  width: 45vw;
+  height: 62vh;
+  width: 55vw;
   overflow: auto;
 }
 #additonal-info {
