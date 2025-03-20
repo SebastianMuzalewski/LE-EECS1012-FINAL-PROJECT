@@ -15,10 +15,7 @@ background-color:#27445D;
 overflow: hidden;
 }
 
-main {
-flex: 1;
-overflow: hidden; 
-}
+
 
 /** header **/
 header {
@@ -27,9 +24,10 @@ margin-left: 185px;
 }
 /** main* */
 main{
-  
-
-
+flex: 1;
+overflow: hidden; 
+left: 0;
+right: 0;
 margin-left: 185px;
 }
 
