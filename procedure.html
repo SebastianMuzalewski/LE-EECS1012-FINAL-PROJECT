@@ -6,12 +6,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
 	<title> Procedure List Page </title>
-    <link rel="stylesheet" type="text/css" href="styles/footer.css"/>
-    <link rel="stylesheet" type="text/css" href="styles/procedure/procedure.css"/>
-    <link rel="stylesheet" type="text/css" href="styles/navbar.css"/>
+    <link id= "darkmode_footer_procedure" rel="stylesheet" type="text/css" href="styles/footer.css"/>
+    <link id = "darkmode_main_procedure" rel="stylesheet" type="text/css" href="styles/procedure/procedure.css"/>
+    <link id= "darkmode_navbar_procedure" rel="stylesheet" type="text/css" href="styles/navbar.css"/>
     
     <script src="scripts/procedure/procedure.js"></script>
     <script src="scripts/navbarSmooth.js"></script>
+    <script src="scripts/darkmode.js"></script>
 </head>
     <body>
         <header>
@@ -39,9 +40,9 @@
                 </li>
             </ul>
             <ul id="sideFeatures">
-                <li id="appearanceToggleName">Dark Mode: <label>State</label>  
+                <li id="appearanceToggleName">Dark Mode: <label id ="state_procedure">Off</label>  
                     <br>
-                    <input type="checkbox"  id="appearanceToggle">
+                    <input type="checkbox"  id="appearanceToggle" onchange="darkmode()">
                     <label for="appearanceToggle" class="slider"></label>
                 </li>
 
@@ -56,6 +57,8 @@
 
         </nav>
     <main>
+        <form id ="splitContainer">
+            <div id="leftSide">
        <section id="services-currently-offered">
             <h2>Services currently offered</h2>
                 <ul>
@@ -64,6 +67,8 @@
                     <li onclick="showemergencyDetails()">Emergency</li>
                 </ul>
         </section>
+            </div>
+            <div id = "rightSide">
         <div id="details-about-service">
             <h2 id="detail-about-service-name">Details about Cleaning</h2>
             <section>
@@ -114,10 +119,13 @@
                 <p id="additonal-info">
                     Avoid eating for 30 minutes after cleaning to allow your teeth to remineralize. Mild sensitivity is normal.
                 </p>
+                </div>
                 
             </section>
+        </div>
 
         </div>
+    </form>
     </main>
     <footer>
         <img id="footerLogo" src="images/footer/tempLogo.png" alt="temporary logo">
