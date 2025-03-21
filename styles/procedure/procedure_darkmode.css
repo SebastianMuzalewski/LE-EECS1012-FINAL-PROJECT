@@ -9,7 +9,7 @@ body {
   display: flex;
   flex-direction: column;
   min-height: calc(100vh-100px);
-  background-color:#27445D;
+  background-color:#121212;
   overflow: hidden;
   margin-left: 202px;
   margin-top: 0px;
@@ -29,7 +29,7 @@ width: 100%;
 #splitContainer {
   display: flex; 
   flex-direction: row; 
-  border: white solid;
+  border: #444 solid;
   min-height: calc(100vh - 195px);
   gap: 10px;
   margin-left: 20px;
@@ -47,14 +47,14 @@ width: 100%;
   display: flex;
   align-items: flex-start;
   text-align: left;
-  border: red solid;
+  border: #444 solid;
 }
 
 #rightSide {
   display: flex;
   align-items: flex-start;
   text-align: left;
-  border: blue solid;
+  border: #444 solid;
 }
 
 body.navbar-closed main {
@@ -83,6 +83,8 @@ transform: translateX(0px);
   height: 100%;
   max-width: 100%;
   overflow: auto;
+  border-color: #444 ;
+  background-color: #1e1e1e;
 }
 
 #services-currently-offered li{
@@ -92,10 +94,12 @@ transform: translateX(0px);
   padding-bottom: 7px;
   font-size: 20px;
   border-width: 1px;
+  border-color: #444 ;
+  background-color: #222;
 }
 
 #services-currently-offered li:hover{
-  background-color: #497d74;
+  background-color: #333;
 }
 
 #details-about-service h2 {
@@ -113,6 +117,8 @@ transform: translateX(0px);
   height: 80%;
   width: 100%;
   overflow: auto;
+  border-color: #444 ;
+  background-color: #1e1e1e;
 }
 #additonal-info {
   border-style: solid;
@@ -120,6 +126,8 @@ transform: translateX(0px);
   margin-right: 5px;
   height: 120px;
   overflow: auto;
+  border-color: #444 ;
+  background-color: #1e1e1e;
 }
 .details-about-service-class{
   border-top-style: solid;
@@ -128,8 +136,8 @@ transform: translateX(0px);
   border-bottom-width: 2px;
   font-size:  20px;
   padding-left: 5px;
-  background-color: #497d74;
-  border-color:  black;
+  background-color: #333;
+  border-color:  #444;
 }
 .details-about-service-span{
   padding-left: 5px;
