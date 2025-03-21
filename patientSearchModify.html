@@ -53,8 +53,8 @@
 
         </nav>
         <main>
-            <form>
-            <div id="leftSide">   
+            <div id="splitContainer">
+            <form id="leftSide">
             <h2 id="topTitle">Patient Details</h2>
             <div id="notifContain">
                 <input id="firstName" placeholder="First Name" type="text" maxlength="35" required>
@@ -123,7 +123,6 @@
                 <textarea></textarea>
                 <button id='subSaveAlert' >Save</button>
                 <button id='subDeleteAlert' onclick="subDeleteClick()" >Delete</button>
-            </div>
         </form>
             <div id="rightSide">
                 <div id="searchContain">
@@ -195,6 +194,7 @@
                 <p id="subInfo">The patient appointment from the schedule has been deleted.</p>
                 <button id="btnClose">Ok</button>
             </div>
+        </div>
         </main>
         <footer>
             <img id="footerLogo" src="images/footer/tempLogo.png" alt="temporary logo">
