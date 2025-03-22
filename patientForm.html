@@ -7,7 +7,7 @@
     <link rel="stylesheet" type="text/css" href="styles/patientForm/patientForm.css"/>
     <link rel="stylesheet" type="text/css" href="styles/navbar.css"/>
     
-    <script src="scripts/patientForm.js"></script>
+    <script src="scripts/patientForm/patientForm.js"></script>
     <script src="scripts/navbarSmooth.js"></script>
 </head>
     <body>
@@ -57,46 +57,46 @@
                 <div id="leftSide">
                     <h2 id="topTitle">Patient Details</h2>
                     <div id="notifContain">
-                        <input id="firstName" placeholder="First Name" type="text" maxlength="35" required>
-                        <img id="notifIcon" src="images/patientForm/incorrectField.png">
+                        <input id="firstName" placeholder="First Name" type="text" maxlength="35" pattern="[A-Za-z]+" required>
+                        <img class="notifIcon" src="images/patientForm/incorrectField.png">
                     </div>
                     <div id="notifContain">  
-                        <input id="lastName" placeholder="Last Name" type="text" maxlength="35" required>
-                        <img id="notifIcon" src="images/patientForm/incorrectField.png">
+                        <input id="lastName" placeholder="Last Name" type="text" maxlength="35" pattern="[A-Za-z]+" required>
+                        <img class="notifIcon" src="images/patientForm/incorrectField.png">
                     </div>  
                     <div id="notifContain"> 
                         <input id="phoneNum" placeholder="Phone Number" type="tel" maxlength="15" pattern="^\+1\s\d{3}-\d{3}-\d{4}$" title="Required Input: +1 234-567-8910"  required> <!-- Valid: +1 123-456-7890 -->
-                        <img id="notifIcon" src="images/patientForm/incorrectField.png">
+                        <img class="notifIcon" src="images/patientForm/incorrectField.png">
                     </div>
                     <div id="notifContain"> 
                         <input id="address" placeholder="Address" type="text" maxlength="35" required>
-                        <img id="notifIcon" src="images/patientForm/incorrectField.png">
+                        <img class="notifIcon" src="images/patientForm/incorrectField.png">
                     </div>
                     <div id="notifContain"> 
                         <input id="zipCode" placeholder="Postal Code" maxlength="7" pattern="[A-Za-z]\d[A-Za-z] \d[A-Za-z]\d" title="Required Input: A1B 2C3" required> <!-- Valid: A1B 2C3 -->
-                        <img id="notifIcon" src="images/patientForm/incorrectField.png">
+                        <img class="notifIcon" src="images/patientForm/incorrectField.png">
                     </div>
                     <h2>Billing information</h2>
                         <input id="insuranceName" type="text" maxlength="35" placeholder="Insurance Provider">
                     <div id="notifContain"> 
                         <input id="billing" placeholder="Billing Address" type="text" maxlength="35" required>
-                        <img id="notifIcon" src="images/patientForm/incorrectField.png">
+                        <img class="notifIcon" src="images/patientForm/incorrectField.png">
                     </div>
                     <div id="notifContain">
                         <input id="payMethod" placeholder="Payment method" type="text" maxlength="16" required>
-                        <img id="notifIcon" src="images/patientForm/incorrectField.png">
+                        <img class="notifIcon" src="images/patientForm/incorrectField.png">
                     </div>
                     <div id="notifContain"> 
                         <input id="cardNum" placeholder="Card Number" type="text"  maxlength="19" pattern="\d{4}-\d{4}-\d{4}-\d{4}" title="Required Input: 1234-5678-9012-3456" required> <!-- Valid: 1234-5678-9012-3456 -->
-                        <img id="notifIcon" src="images/patientForm/incorrectField.png">
+                        <img class="notifIcon" src="images/patientForm/incorrectField.png">
                     </div>
                     <div id="notifContain"> 
                         <input id="creditCardHolder" placeholder="Card Holder Name" type="text" maxlength="70" required>
-                        <img id="notifIcon" src="images/patientForm/incorrectField.png">
+                        <img class="notifIcon" src="images/patientForm/incorrectField.png">
                     </div>
                     <div id="notifContain">
-                        <input id="cvv" placeholder="CVV" type="text" pattern="\d{3}" maxlength="4" required>
-                        <img id="notifIcon" src="images/patientForm/moreInfo.png">
+                        <input id="cvv" placeholder="CVV" type="text" pattern="\d{3,4}$" maxlength="4" required>
+                        <img id="notifIconClarification" src="images/patientForm/moreInfo.png">
                         <div id="notifMsg">3 or 4 digit code on back of Credit Card</div>
                     </div>
                 </div>
@@ -131,8 +131,8 @@
         <div id="alertMsg">
             <span id="cornerClose">&times;</span>
             <h3 id="alertTitle">Appointment has been submitted!</h3>
-            <p id="subInfoName">Patient name: Patient Name 01</p>
-            <p id="subInfoTime">Date & Time: MM/dd/20yy hh:mm</p>
+            <p id="subInfoName"></p>
+            <p id="subInfoTime"></p>
             <button id="btnClose">Ok</button>
         </div>
 
