@@ -1,6 +1,9 @@
 /* calendar Styles */
 @import url(./month-calendar.css);
-@import url(./responsive.css);
+@import url(./event-list.css);
+@import url(./event.css);
+@import url(./root.css);
+@import url(./week-calendar.css);
 /* Affects Whole Page*/
 *{
   color: #efe9de;
@@ -12,7 +15,7 @@ flex-direction: column;
 min-height: 100vh;
 background-color:#27445D;
 
-overflow: hidden;
+overflow: auto;
 }
 
 
