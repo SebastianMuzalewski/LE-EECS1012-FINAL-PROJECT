@@ -37,7 +37,6 @@ header {
 #splitContainer {
   display: flex; 
   flex-direction: row; 
-  border: white solid;
   min-height: calc(100vh - 195px);
   gap: 10px;
   margin-left: 20px;
@@ -55,20 +54,26 @@ header {
   display: flex;
   align-items: flex-start;
   text-align: left;
-  border: red solid;
 }
 
 #rightSide {
   display: flex;
   align-items: flex-start;
   text-align: left;
-  border: blue solid;
 }
 
 /** Form Styling **/
 
-input, #appointmentType, textarea {
+input, textarea  {
   width: 50%;
+  padding: 5px;
+  margin-bottom: 5px;
+  display: block;
+  color: black;
+}
+
+#appointmentType {
+  width: 52%;
   padding: 5px;
   margin-bottom: 5px;
   display: block;
@@ -84,7 +89,7 @@ textarea {
   margin: 0 0 10px 0;
 }
 
-button, #appointmentType {
+button {
   width: 52%;
   height: 25px;
 }
@@ -170,16 +175,16 @@ body.navbar-closed #alertMsg {
   position: relative;
   display: inline-block;  
   width: 100%;
+  min-width: 350px;
 }
 
 .notifIcon {
   position: absolute;
   top: 50%;
-  left: 48%;
+  left: 47%;
   transform: translateY(-55%);
   width: 20px;
   height: 20px;
-  cursor: pointer;
   z-index: 1000;
   display: none;
 }
@@ -187,7 +192,7 @@ body.navbar-closed #alertMsg {
 #notifIconClarification {
   position: absolute;
   top: 50%;
-  left: 48%;
+  left: 47%;
   transform: translateY(-55%);
   width: 20px;
   height: 20px;
@@ -199,7 +204,7 @@ body.navbar-closed #alertMsg {
 #notifIconConflict {
   position: absolute;
   top: 50%;
-  left: 44%;
+  left: 46%;
   transform: translateY(-55%);
   width: 20px;
   height: 20px;
@@ -211,11 +216,10 @@ body.navbar-closed #alertMsg {
 #notifIconSelect {
   position: absolute;
   top: 3.5%;
-  left: 48%;
+  left: 46%;
   transform: translateY(-55%);
   width: 20px;
   height: 20px;
-  cursor: pointer;
   z-index: 1000;
   display: none;
 }
@@ -229,13 +233,22 @@ body.navbar-closed #alertMsg {
   background-color: darkgoldenrod;
   color: white;
   padding: 5px;
+  padding-bottom: 5px;
   border-radius: 5px;
   white-space: nowrap;
   text-align: center;
+  text-wrap: balance;
+  top: 0px;
 }
 
 #notifIcon:hover + #notifMsg {
   visibility: visible;
+}
+
+@media (max-width: 1485px) {
+  #notifMsg {
+    padding-bottom: 40px;
+  } 
 }
 
 #notifMsgConf {
@@ -247,9 +260,11 @@ body.navbar-closed #alertMsg {
   background-color: orange;
   color: white;
   padding: 5px;
+  padding-bottom: 75px;
   border-radius: 5px;
   white-space: nowrap;
-  text-align: center;
+  text-align: left;
+  top: 0px;
 }
 
 #notifIcon:hover + #notifMsgConf {

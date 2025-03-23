@@ -50,22 +50,21 @@
                         <option>TBD</option>
                     </select>
             </ul>
-
         </nav>
         <main>
             <form id="splitContainer">
                 <div id="leftSide">
                     <h2 id="topTitle">Patient Details</h2>
                     <div id="notifContain">
-                        <input id="firstName" placeholder="First Name" type="text" maxlength="35" pattern="[A-Za-z]+" required>
+                        <input id="firstName" placeholder="First Name" type="text" maxlength="35" pattern="[A-Za-z]+" title=" Required Format: Only letters" required>
                         <img class="notifIcon" src="images/patientForm/incorrectField.png">
                     </div>
                     <div id="notifContain">  
-                        <input id="lastName" placeholder="Last Name" type="text" maxlength="35" pattern="[A-Za-z]+" required>
+                        <input id="lastName" placeholder="Last Name" type="text" maxlength="35" pattern="[A-Za-z]+" title=" Required Format: Only letters" required>
                         <img class="notifIcon" src="images/patientForm/incorrectField.png">
                     </div>  
                     <div id="notifContain"> 
-                        <input id="phoneNum" placeholder="Phone Number" type="tel" maxlength="15" pattern="^\+1\s\d{3}-\d{3}-\d{4}$" title="Required Input: +1 234-567-8910"  required> <!-- Valid: +1 123-456-7890 -->
+                        <input id="phoneNum" placeholder="Phone Number" type="tel" maxlength="15" pattern="^\+1\s\d{3}-\d{3}-\d{4}$" title=" Required Format: +1 234-567-8910"  required>
                         <img class="notifIcon" src="images/patientForm/incorrectField.png">
                     </div>
                     <div id="notifContain"> 
@@ -73,7 +72,7 @@
                         <img class="notifIcon" src="images/patientForm/incorrectField.png">
                     </div>
                     <div id="notifContain"> 
-                        <input id="zipCode" placeholder="Postal Code" maxlength="7" pattern="[A-Za-z]\d[A-Za-z] \d[A-Za-z]\d" title="Required Input: A1B 2C3" required> <!-- Valid: A1B 2C3 -->
+                        <input id="zipCode" placeholder="Postal Code" maxlength="7" pattern="[A-Za-z]\d[A-Za-z] \d[A-Za-z]\d" title=" Required Format: A1B 2C3" required>
                         <img class="notifIcon" src="images/patientForm/incorrectField.png">
                     </div>
                     <h2>Billing information</h2>
@@ -87,11 +86,11 @@
                         <img class="notifIcon" src="images/patientForm/incorrectField.png">
                     </div>
                     <div id="notifContain"> 
-                        <input id="cardNum" placeholder="Card Number" type="text"  maxlength="19" pattern="\d{4}-\d{4}-\d{4}-\d{4}" title="Required Input: 1234-5678-9012-3456" required> <!-- Valid: 1234-5678-9012-3456 -->
+                        <input id="cardNum" placeholder="Card Number" type="text"  maxlength="19" pattern="\d{4}-\d{4}-\d{4}-\d{4}" title="Required Format: 1234-5678-9012-3456" required>
                         <img class="notifIcon" src="images/patientForm/incorrectField.png">
                     </div>
                     <div id="notifContain"> 
-                        <input id="creditCardHolder" placeholder="Card Holder Name" type="text" maxlength="70" required>
+                        <input id="creditCardHolder" placeholder="Card Holder Name" type="text" maxlength="70" pattern="[A-Za-z]+" title="Required Format: Only letters" required>
                         <img class="notifIcon" src="images/patientForm/incorrectField.png">
                     </div>
                     <div id="notifContain">
@@ -106,7 +105,7 @@
             <div id="notifContain">
                 <input id="dateTime" type="datetime-local" placeholder="Date & Time" required>
                 <img id="notifIconConflict" src="images/patientForm/warning.png">
-                <div id="notifMsgConf">Schedule Confliction</div>
+                <div id="notifMsgConf">Schedule Confliction: <br> Date: 2025 + <br> Time: 8:00 AM - 6:00 PM <br> Day: Mon-Sat </div>
             </div>
             <div id="notifContain">
                 <img id="notifIconSelect" src="images/patientForm/incorrectField.png">
