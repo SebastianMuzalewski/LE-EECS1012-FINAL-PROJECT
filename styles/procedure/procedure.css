@@ -1,29 +1,35 @@
 /* procedure Styles */
 
 /* Affects Whole Page*/
-*{
+* {
   color: #efe9de;
 }
+
+/** Main content **/
 
 body {
   display: flex;
   flex-direction: column;
-  min-height: calc(100vh-100px);
+  min-height: calc(100vh - 100px);
   background-color:#27445D;
-  overflow: hidden;
   margin-left: 202px;
   margin-top: 0px;
   margin-right: 0px;
 }
 
-
 main {
-flex: 1;
-right: 0px;
-overflow: auto;
-min-height: calc(100vh-200px);
-margin-bottom: 2.5px;
-width: 100%;
+  flex: 1;
+  right: 0px;
+  min-height: calc(100vh - 200px);
+  margin-bottom: 2.5px;
+  width: 100%;
+}
+
+/** Header Text & Content **/
+
+header {
+  text-align: center;
+  height: 90px;
 }
 
 #splitContainer {
@@ -34,6 +40,7 @@ width: 100%;
   gap: 10px;
   margin-left: 20px;
   margin-right: 20px;
+  margin-bottom: 100px;
 }
 
 #leftSide, #rightSide {
