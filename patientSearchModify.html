@@ -4,10 +4,11 @@
 	<meta charset="UTF-8">
 	<title> Patient Search & Modify Page </title>
     <link rel="stylesheet" type="text/css" href="styles/footer.css"/>
-    <link rel="stylesheet" type="text/css" href="styles/patientSearch&Modify/patientSearchModify.css"/>
+    <link rel="stylesheet" type="text/css" href="styles/patientSearchModify/patientSearchModify.css"/>
     <link rel="stylesheet" type="text/css" href="styles/navbar.css"/>
     
-    <script src="scripts/patientSearchModify.js"></script>
+    <script src="scripts/patientSearchModify/patientSearchModify.js"></script>
+    <script src="scripts/patientSearchModify/patients.js"></script>
     <script src="scripts/navbarSmooth.js"></script>
 </head>
     <body>
@@ -116,11 +117,11 @@
             </div>
                 <input id="preDentist" type="text" maxlength="16" placeholder="Preferred Dentist">
             <h2>Medical Details</h2>
-                <input type="text" placeholder="Allergies">
-                <input type="text" placeholder="Current Medications">
-                <input placeholder="Medical Conditions">
+                <input id="allergies" type="text" placeholder="Allergies">
+                <input id="curMed" type="text" placeholder="Current Medications">
+                <input id="medCond" placeholder="Medical Conditions">
                 <label id="textTitle">Previous Surgeries/Procedures</label>
-                <textarea></textarea>
+                <textarea id="additionalInfo"></textarea>
                 <button id='subSaveAlert' >Save</button>
                 <button id='subDeleteAlert' onclick="subDeleteClick()" >Delete</button>
         </form>
@@ -136,48 +137,8 @@
                             <th>Date & Time</th>
                         </tr>
                     </thead>
-                    <tbody>
-                        <tr>
-                            <td id="patientName">Patient Name 01</td>
-                            <td id="assignedDateTime">MM/dd/20yy hh:mm</td>
-                        </tr>
-                        <tr>
-                            <td id="patientName">Patient Name 02</td>
-                            <td id="assignedDateTime">MM/dd/20yy hh:mm</td>
-                        </tr>
-                        <tr>
-                            <td id="patientName">Patient Name 03</td>
-                            <td id="assignedDateTime">MM/dd/20yy hh:mm</td>
-                        </tr>
-                        <tr>
-                            <td id="patientName">Patient Name 04</td>
-                            <td id="assignedDateTime">MM/dd/20yy hh:mm</td>
-                        </tr>
-                        <tr>
-                            <td id="patientName">Patient Name 05</td>
-                            <td id="assignedDateTime">MM/dd/20yy hh:mm</td>
-                        </tr>
-                        <tr>
-                            <td id="patientName">Patient Name 06</td>
-                            <td id="assignedDateTime">MM/dd/20yy hh:mm</td>
-                        </tr>
-                        <tr>
-                            <td id="patientName">Patient Name 07</td>
-                            <td id="assignedDateTime">MM/dd/20yy hh:mm</td>
-                        </tr>
-                        <tr>
-                            <td id="patientName">Patient Name 08</td>
-                            <td id="assignedDateTime">MM/dd/20yy hh:mm</td>
-                        </tr>
-                        <tr>
-                            <td id="patientName">Patient Name 09</td>
-                            <td id="assignedDateTime">MM/dd/20yy hh:mm</td>
-                        </tr>
-                        <tr>
-                            <td id="patientName">Patient Name 10</td>
-                            <td id="assignedDateTime">MM/dd/20yy hh:mm</td>
-                        </tr>
-                        
+                    <tbody id="patientDataTable">
+            
                     </tbody>
                 </table>
             </div>
