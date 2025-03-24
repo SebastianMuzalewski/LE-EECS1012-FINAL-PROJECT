@@ -8,5 +8,5 @@
 }
 .event-list__item{
     display: flex;
-
+    border-top: none;
 }

@@ -44,7 +44,7 @@ function formValidation(){
     const dateTimeFormInput = document.getElementById('dateTime');
     const dateTimeValue = dateTimeFormInput.value;
 
-    // 
+    // Checks if the value is not empty 
     if(dateTimeValue) {
         const selectedDateTime = new Date(dateTimeValue);
         const year = selectedDateTime.getFullYear();
@@ -59,7 +59,7 @@ function formValidation(){
         }
 
         // Index 0 is Sunday and Index 6 is Saturday
-        if(dayOfWeek === 0 || dayOfWeek === 6){
+        if(dayOfWeek === 0){
             flag = false;
             document.getElementById('notifIconConflict').style.display = 'block';
         }
