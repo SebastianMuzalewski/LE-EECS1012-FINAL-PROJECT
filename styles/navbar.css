@@ -33,7 +33,7 @@ nav {
      padding-left: 0px;
    }
    
-   ul > li {
+  nav> ul > li {
     border-top: solid;
    }
    

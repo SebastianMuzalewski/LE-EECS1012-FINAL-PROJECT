@@ -16,7 +16,7 @@ display: flex;
 flex-direction: column;
 min-height: calc(100vh - 100px);
 background-color:#27445D;
-overflow: hidden;
+overflow: auto;
 margin-left: 202px;
 margin-top: 0px;
 margin-right: 0px;

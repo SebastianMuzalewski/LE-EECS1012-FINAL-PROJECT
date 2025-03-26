@@ -1,3 +1,8 @@
+/**
+ * calendar-view is a function to display month and week calendar table
+ * when the user select the select it from the month-week-selector
+ */
+
 export function initCalendar(){
     const monthCalendarElement= document.querySelector("[data-month-calendar]")
     const weekCalendarElement= document.querySelector("[data-week-calendar]")

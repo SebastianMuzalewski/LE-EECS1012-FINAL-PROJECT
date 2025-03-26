@@ -14,17 +14,39 @@
     cursor: pointer;
 }
 .event--filled{
-    background-color: darkblue;
+    background-color: #71bbb2;
     
+}
+.event--dynamic{
+    position: absolute;
+    top:12.5%;
+    right: 0;
+    bottom:75%;
+    left:0;
+    width: unset;
+    border: 1px solid white;
+    overflow: unset;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
 }
 .event__color{
     display: inline-block;
     border-radius: 50%;
     width: 0.5rem;
     height: 0.5rem;
-    background-color: darkblue;
+    background-color: #71bbb2;
     margin-right: 0.25rem;
 }
 .event--filled .event__color{
     display: none;
+}
+.event__time{
+    display: none;
+}
+.event--dynamic .event__time{
+    display:block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }

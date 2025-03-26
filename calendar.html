@@ -14,7 +14,7 @@
     <body>
         <header>
             <h1> Hello there! </h1>
-            <h3> The date today is MM/dd/20yy and the time is hh:mm:ss</h3>
+            <h3 id="liveDateTime"> The date today is MM/dd/20yy and the time is hh:mm:ss</h3>
         </header>
         <div id="banner-leaf"><img id="nav-hamburger-hidden" src="images/navbar/hamburger.png" onclick="toggleNavbar()" alt="temporary Img"></div>
         <div id="banner-leaf"><img id="nav-hamburger-hidden" src="images/navbar/hamburger.png" onclick="toggleNavbar()" alt="temporary Img"></div>
@@ -501,6 +501,13 @@
                                     <div class="week-calendar__cell"></div>
                                     <div class="week-calendar__cell"></div>
                                     <div class="week-calendar__cell"></div>
+                                    <button class="event event--filled event--dynamic">
+                                        <span class="event__color"></span>
+                                        <span class="event__title">Customer B</span>
+                                        <span class="event__time">
+                                            <time>3:00 AM</time> - <time>6:00 AM</time>
+                                        </span>
+                                    </button>
                                 </div>
                                 <div class="week-calendar__colum">
                                     <div class="week-calendar__cell"></div>
