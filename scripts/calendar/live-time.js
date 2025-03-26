@@ -1,3 +1,7 @@
+
+/**
+ * live-time function is for displaying the live time in the header
+ */
 export function startLiveTime() {
     const liveDateTimeElement = document.getElementById("liveDateTime");
 
