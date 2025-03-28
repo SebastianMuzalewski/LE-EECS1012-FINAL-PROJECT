@@ -3,12 +3,16 @@
 <head>
 	<meta charset="UTF-8">
 	<title> Patient Search & Modify Page </title>
-    <link rel="stylesheet" type="text/css" href="styles/footer.css"/>
-    <link rel="stylesheet" type="text/css" href="styles/patientSearchModify/patientSearchModify.css"/>
-    <link rel="stylesheet" type="text/css" href="styles/navbar.css"/>
     
-    <script src="scripts/patientSearchModify/patientSearchModify.js"></script>
-    <script src="scripts/patientSearchModify/patients.js"></script>
+    <link rel="stylesheet" type="text/css" href="./styles/footer.css"/>
+    <link rel="stylesheet" type="text/css" href="./styles/patientSearchModify/patientSearchModify.css"/>
+    <link rel="stylesheet" type="text/css" href="./styles/navbar.css"/>
+    
+    <script type="module" src="scripts/patientSearchModify/patients.js"></script>
+    <script type="module" src="scripts/patientSearchModify/patientSearchModify.js"></script>
+    <!-- <script src="scripts/patientSearchModify/patientModify.js" defer></script> -->
+    <!-- <script src="scripts/patientSearchModify/patientDelete.js" defer></script>
+    <script src="scripts/patientSearchModify/patientSearch.js" defer></script> -->
     <script src="scripts/navbarSmooth.js"></script>
 </head>
     <body>
@@ -58,61 +62,61 @@
             <form id="leftSide">
             <h2 id="topTitle">Patient Details</h2>
             <div id="notifContain">
-                <input id="firstName" placeholder="First Name" type="text" maxlength="35" required>
-                <img id="notifIcon" src="images/patientForm/incorrectField.png">
+                <input id="firstName" placeholder="First Name" type="text" maxlength="35" pattern="[A-Za-z]+" title=" Required Format: Only letters" required>
+                <img class="notifIcon" src="images/patientForm/incorrectField.png">
             </div>
             <div id="notifContain">  
-                <input id="lastName" placeholder="Last Name" type="text" maxlength="35" required>
-                <img id="notifIcon" src="images/patientForm/incorrectField.png">
-            </div>
+                <input id="lastName" placeholder="Last Name" type="text" maxlength="35" pattern="[A-Za-z]+" title=" Required Format: Only letters" required>
+                <img class="notifIcon" src="images/patientForm/incorrectField.png">
+            </div>  
             <div id="notifContain"> 
-                <input id="phoneNum" placeholder="Phone Number" type="tel" maxlength="15" pattern="^\+1\s\d{3}-\d{3}-\d{4}$" title="Required Input: +1 234-567-8910"  required> <!-- Valid: +1 123-456-7890 -->
-                <img id="notifIcon" src="images/patientForm/incorrectField.png">
+                <input id="phoneNum" placeholder="Phone Number" type="tel" maxlength="15" pattern="^\+1\s\d{3}-\d{3}-\d{4}$" title=" Required Format: +1 234-567-8910"  required>
+                <img class="notifIcon" src="images/patientForm/incorrectField.png">
             </div>
             <div id="notifContain"> 
                 <input id="address" placeholder="Address" type="text" maxlength="35" required>
-                <img id="notifIcon" src="images/patientForm/incorrectField.png">
+                <img class="notifIcon" src="images/patientForm/incorrectField.png">
             </div>
             <div id="notifContain"> 
-                <input id="zipCode" placeholder="Postal Code" maxlength="7" pattern="[A-Za-z]\d[A-Za-z] \d[A-Za-z]\d" title="Required Input: A1B 2C3" required> <!-- Valid: A1B 2C3 -->
-                <img id="notifIcon" src="images/patientForm/incorrectField.png">
+                <input id="zipCode" placeholder="Postal Code" maxlength="7" pattern="[A-Za-z]\d[A-Za-z] \d[A-Za-z]\d" title=" Required Format: A1B 2C3" required>
+                <img class="notifIcon" src="images/patientForm/incorrectField.png">
             </div>
             <h2>Billing information</h2>
                 <input id="insuranceName" type="text" maxlength="35" placeholder="Insurance Provider">
             <div id="notifContain"> 
                 <input id="billing" placeholder="Billing Address" type="text" maxlength="35" required>
-                <img id="notifIcon" src="images/patientForm/incorrectField.png">
+                <img class="notifIcon" src="images/patientForm/incorrectField.png">
             </div>
             <div id="notifContain">
                 <input id="payMethod" placeholder="Payment method" type="text" maxlength="16" required>
-                <img id="notifIcon" src="images/patientForm/incorrectField.png">
+                <img class="notifIcon" src="images/patientForm/incorrectField.png">
             </div>
             <div id="notifContain"> 
-                <input id="cardNum" placeholder="Card Number" type="text"  maxlength="19" pattern="\d{4}-\d{4}-\d{4}-\d{4}" title="Required Input: 1234-5678-9012-3456" required> <!-- Valid: 1234-5678-9012-3456 -->
-                <img id="notifIcon" src="images/patientForm/incorrectField.png">
+                <input id="cardNum" placeholder="Card Number" type="text"  maxlength="19" pattern="\d{4}-\d{4}-\d{4}-\d{4}" title="Required Format: 1234-5678-9012-3456" required>
+                <img class="notifIcon" src="images/patientForm/incorrectField.png">
             </div>
             <div id="notifContain"> 
-                <input id="creditCardHolder" placeholder="Card Holder Name" type="text" maxlength="70" required>
-                <img id="notifIcon" src="images/patientForm/incorrectField.png">
+                <input id="creditCardHolder" placeholder="Card Holder Name" type="text" maxlength="70" pattern="[A-Za-z]+" title="Required Format: Only letters & No spaces" required>
+                <img class="notifIcon" src="images/patientForm/incorrectField.png">
             </div>
             <div id="notifContain">
-                <input id="cvv" placeholder="CVV" type="text" pattern="\d{3}" maxlength="4" required>
-                <img id="notifIcon" src="images/patientForm/moreInfo.png">
+                <input id="cvv" placeholder="CVV" type="text" pattern="\d{3,4}$" maxlength="4" required>
+                <img id="notifIconClarification" src="images/patientForm/moreInfo.png">
                 <div id="notifMsg">3 or 4 digit code on back of Credit Card</div>
             </div>
             <h2 id="topTitle">Appointment details</h2>
             <div id="notifContain">
                 <input id="dateTime" type="datetime-local" placeholder="Date & Time" required>
                 <img id="notifIconConflict" src="images/patientForm/warning.png">
-                <div id="notifMsgConf">Schedule Confliction</div>
+                <div id="notifMsgConf">Schedule Confliction: <br> Date: 2025 + <br> Time: 8:00 AM - 6:00 PM <br> Day: Mon-Sat </div>
             </div>
-            <div id="notifContain">
-                <img id="notifIcon" src="images/patientForm/incorrectField.png">
+             <div id="notifContain">
+                <img id="notifIconSelect" src="images/patientForm/incorrectField.png">
                 <select id="appointmentType" placeholder="Appointment Type" required>
-                        <option value="" disabled selected hidden>Appointment Type</option>
-                        <option>Cleaning</option>
-                        <option>Filling</option>
-                        <option>Emergency</option>
+                    <option value="" disabled selected hidden>Appointment Type</option>
+                    <option>Cleaning</option>
+                    <option>Filling</option>
+                    <option>Emergency</option>
                 </select>
             </div>
                 <input id="preDentist" type="text" maxlength="16" placeholder="Preferred Dentist">
@@ -122,7 +126,8 @@
                 <input id="medCond" placeholder="Medical Conditions">
                 <label id="textTitle">Previous Surgeries/Procedures</label>
                 <textarea id="additionalInfo"></textarea>
-                <button id='subSaveAlert' >Save</button>
+                <input type="datetime-local" id="endTime" style="display:none"> <!-- Set to hidden because complains about null -->
+                <button id='subSaveAlert' onclick="subSaveClick()">Save</button>
                 <button id='subDeleteAlert' onclick="subDeleteClick()" >Delete</button>
         </form>
             <div id="rightSide">
@@ -145,7 +150,7 @@
             <div id="alertMsgWarn">
                 <span id="cornerCloseWarn">&times;</span>
                 <h1 id="alertTitle">WARNING!</h1>
-                <p id="subInfoWarn">Are you sure you want to delete (Patient Name 01) from the schedule?</p>
+                <p id="subInfoWarn"></p>
                 <button id="btnCloseYes">Yes</button>
                 <button id="btnCloseNo">No</button>
             </div>
