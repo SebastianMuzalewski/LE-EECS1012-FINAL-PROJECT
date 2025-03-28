@@ -1,8 +1,18 @@
+import { patientData } from "./patients.js";
+
+console.log(patientData); 
+
+/*
+ * populateData: Populates the table with pre-defined patient info.
+ *               Only displays the full name & date in the table, While everything
+ *               else is waiting to be called when the patient is clicked.
+ *               from the populateForm function.             
+ */
 
 function populateData(){
     const tableBody = document.getElementById("patientDataTable");
-    tableBody.innerHTML = "";
-
+    
+    // Iterates over the patient array and grabs: firstName, lastName & Date
     patientData.forEach(patient => {
         const row = document.createElement("tr");
 
@@ -13,15 +23,23 @@ function populateData(){
         const dateCell = document.createElement("td");
         dateCell.textContent = patient.dateTime;
 
-        row.addEventListener("click" , function() {
-            populateForm(patient);
-        });
-
+        // Adds Name & Date, Then adds the row
         row.appendChild(fullNameCell);
         row.appendChild(dateCell);
         tableBody.appendChild(row)
+
+        // When the populateForm function is called the patients information populates
+        row.addEventListener("click" , function() {
+            populateForm(patient);
+        });
     });
 }
+
+/*
+ * populateForm: Fills the form with the patient data when the row with
+ *               the patient name is clicked. The || '' is for the fields
+ *               that are empty, Mainly not required fields.    
+ */
 
 function populateForm(patient){
     document.getElementById("firstName").value = patient.firstName;
@@ -37,11 +55,23 @@ function populateForm(patient){
     document.getElementById("cardNum").value = patient.cardNum;
     document.getElementById("cvv").value = patient.cvv;
 
+    // Date is handled manually to accomodate for Time
     // Time Zone Specific, Set to Ontario time zone in localDate (GMT-4)
     const formattedDate = new Date(patient.dateTime);
+    // First step: Converts passed Date/Time to timestamp
+    // Second step: TimezoneOffset is used to adjust the local timezone, UTC to GMT-4
     const localDate = new Date(formattedDate.getTime() - formattedDate.getTimezoneOffset() * 60000);
+    // Last step: Converts localDate to an ISO 8601 string which extracts
+    // the date format need to correct display the date in the input field (YYYY-MM-DDTHH:mm)
     const formattedDateTime = localDate.toISOString().slice(0, 16);
-    console.log(formattedDate);
+    
+    // Same as above but set for the end date
+    const formattedEndTime = new Date(formattedDate.getTime() + 60 * 60 * 1000);
+    const localEndTime = new Date(formattedEndTime.getTime() - formattedEndTime.getTimezoneOffset() * 60000);
+    const formattedDateEndTime = localEndTime.toISOString().slice(0,16);
+
+    console.log(formattedDate); // Console test for start date/time
+    console.log(formattedEndTime); // Console test for end date/time
 
     document.getElementById("dateTime").value = formattedDateTime;
     document.getElementById("appointmentType").value = patient.appointmentType;
@@ -50,195 +80,11 @@ function populateForm(patient){
     document.getElementById("curMed").value = patient.curMed || "";
     document.getElementById("medCond").value = patient.medCond || "";
     document.getElementById("additionalInfo").value = patient.additionalInfo || "";
+    document.getElementById("endTime").value = formattedDateEndTime;
 }
 
-function subDeleteClick(){
-    
-    document.getElementById('alertMsgWarn').style.display = 'block';
+// Loads the patients dynamically
 
-    document.getElementById('btnCloseNo').onclick = function() {
-        document.getElementById('alertMsgWarn').style.display='none';
-    };
-
-    document.getElementById('btnCloseYes').onclick = function() {
-        document.getElementById('alertMsgWarn').style.display='none';
-        document.getElementById('alertMsgDelete').style.display='block';
-    };
-
-    document.getElementById('btnClose').onclick = function() {
-        document.getElementById('alertMsgDelete').style.display='none';
-    };
-
-    document.getElementById('cornerCloseWarn').onclick = function() {
-        document.getElementById('alertMsgWarn').style.display='none'; 
-    };
-    document.getElementById('cornerCloseDelete').onclick = function() {
-        document.getElementById('alertMsgDelete').style.display='none'; 
-    };
-}
-
-window.addEventListener("DOMContentLoaded", populateData);
-
-// Array list of patients by default when the page is loaded
-const patientData = [
-    {
-        firstName: "Alice", 
-        lastName: "Smith",
-        phoneNum: "+1 123-456-1234",
-        address: "4321 Oak Drive",
-        zipCode: "B1C 4T5",
-        insuranceName: "HealthPlus",
-        billing: "5678 Maple Ave",
-        payMethod: "Mastercard",
-        cardNum: "2345-6789-0123-4567",
-        creditCardHolder: "Ms Alice Smith",
-        cvv: "783",
-        dateTime: "2025/03/14, 8:30 am",
-        appointmentType: "Filling",
-        preDentist: "Dr Jackson",
-        allergies: "Peanuts",
-        curMed: "Ibuprofen",
-        medCond: "None",
-        additionalInfo: "Regular checkup"
-    },
-    {
-        firstName: "Bob", 
-        lastName: "Jones",
-        phoneNum: "+1 123-456-7891",
-        address: "9876 Pine Road",
-        zipCode: "C2D 6E7",
-        insuranceName: "HealthyLife",
-        billing: "2468 Elm St",
-        payMethod: "PayPal",
-        cardNum: "3456-7890-1234-5678",
-        creditCardHolder: "Mr Bob Jones",
-        cvv: "435",
-        dateTime: "2025/03/15, 10:00 am",
-        appointmentType: "Emergency",
-        preDentist: "Dr Williams",
-        allergies: "None",
-        curMed: "None",
-        medCond: "Diabetes",
-        additionalInfo: "Urgent care needed"
-    },
-    {
-        firstName: "Carla", 
-        lastName: "Green",
-        phoneNum: "+1 123-456-7892",
-        address: "1234 Birch Blvd",
-        zipCode: "D3E 7F9",
-        insuranceName: "Medicare",
-        billing: "9087 Cedar Ln",
-        payMethod: "Visa",
-        cardNum: "4567-8901-2345-6789",
-        creditCardHolder: "Ms Carla Green",
-        cvv: "512",
-        dateTime: "2025/03/16, 12:15 pm",
-        appointmentType: "Cleaning",
-        preDentist: "Dr Blake",
-        allergies: "None",
-        curMed: "Vitamin C",
-        medCond: "None",
-        additionalInfo: "Regular cleaning"
-    },
-    {
-        firstName: "David", 
-        lastName: "Taylor",
-        phoneNum: "+1 123-456-7893",
-        address: "6543 Willow Ave",
-        zipCode: "E4F 8G2",
-        insuranceName: "PrimeHealth",
-        billing: "1122 Maple St",
-        payMethod: "Stripe",
-        cardNum: "5678-9012-3456-7890",
-        creditCardHolder: "Mr David Taylor",
-        cvv: "639",
-        dateTime: "2025/03/17, 1:45 pm",
-        appointmentType: "Filling",
-        preDentist: "Dr Monroe",
-        allergies: "Shellfish",
-        curMed: "Antihistamines",
-        medCond: "Asthma",
-        additionalInfo: "Scheduled follow-up"
-    },
-    {
-        firstName: "Eve", 
-        lastName: "White",
-        phoneNum: "+1 123-456-7894",
-        address: "3210 Cedar Rd",
-        zipCode: "F5G 9H3",
-        insuranceName: "WellCare",
-        billing: "1024 Birch Ln",
-        payMethod: "Mastercard",
-        cardNum: "6789-0123-4567-8901",
-        creditCardHolder: "Ms Eve White",
-        cvv: "781",
-        dateTime: "2025/03/18, 3:00 pm",
-        appointmentType: "Emergency",
-        preDentist: "Dr Sanders",
-        allergies: "Dust",
-        curMed: "None",
-        medCond: "None",
-        additionalInfo: "Emergency consultation"
-    },
-    {
-        firstName: "Frank", 
-        lastName: "Black",
-        phoneNum: "+1 123-456-7895",
-        address: "7654 Oak St",
-        zipCode: "G6H 0J4",
-        insuranceName: "Aetna",
-        billing: "3210 Oak Dr",
-        payMethod: "PayPal",
-        cardNum: "7890-1234-5678-9012",
-        creditCardHolder: "Mr Frank Black",
-        cvv: "842",
-        dateTime: "2025/03/19, 4:30 pm",
-        appointmentType: "Cleaning",
-        preDentist: "Dr Clark",
-        allergies: "None",
-        curMed: "None",
-        medCond: "None",
-        additionalInfo: "No special notes"
-    },
-    {
-        firstName: "Grace", 
-        lastName: "Blue",
-        phoneNum: "+1 123-456-7896",
-        address: "8765 Pine Blvd",
-        zipCode: "H7I 2K5",
-        insuranceName: "Cigna",
-        billing: "4432 Pine St",
-        payMethod: "Visa",
-        cardNum: "8901-2345-6789-0123",
-        creditCardHolder: "Ms Grace Blue",
-        cvv: "293",
-        dateTime: "2025/03/20, 5:00 pm",
-        appointmentType: "Filling",
-        preDentist: "Dr Patel",
-        allergies: "Penicillin",
-        curMed: "None",
-        medCond: "Hypertension",
-        additionalInfo: "Follow-up appointment"
-    },
-    {
-        firstName: "Helen", 
-        lastName: "Red",
-        phoneNum: "+1 123-456-7897",
-        address: "2345 Birch Ln",
-        zipCode: "I8J 3L6",
-        insuranceName: "UnitedHealth",
-        billing: "5678 Elm Ave",
-        payMethod: "Stripe",
-        cardNum: "9012-3456-7890-1234",
-        creditCardHolder: "Ms Helen Red",
-        cvv: "716",
-        dateTime: "2025/03/21, 9:15 am",
-        appointmentType: "Emergency",
-        preDentist: "Dr Martinez",
-        allergies: "None",
-        curMed: "None",
-        medCond: "None",
-        additionalInfo: "Urgent care needed"
-    },
-];
+document.addEventListener("DOMContentLoaded", function() {
+    populateData();
+});
