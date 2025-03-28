@@ -171,4 +171,6 @@ var patientData = [
     },
 ];
 
+console.log(patientData);
+
 export { patientData };

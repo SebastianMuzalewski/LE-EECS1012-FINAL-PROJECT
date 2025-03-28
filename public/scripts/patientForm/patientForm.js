@@ -1,14 +1,11 @@
-/********************************************************************
-* formValidation: Saves important fields into an array. It checks if*
-*                 the fields are valid input based on the pattern   *
-*                 when the pattern is incorrect certain images will *
-*                 display as a result. Date is manually checked     *
-*                 since on valid dates are applicable.              * 
-*********************************************************************/
+/*
+ * formValidation: Checks required fields against predefined patterns.
+ *                 Date/Time is verified manually.                 
+ */
 
 function formValidation(){
     let flag = true;
-    // Form fields saved to an array, Date is moved to a manual check since more critical validation is needed
+    // Form fields saved to an array with id & regex pattern
     const correctFields = [
         { id: 'firstName', pattern: /^[A-Za-z]+$/ },
         { id: 'lastName', pattern: /^[A-Za-z]+$/ },
@@ -27,13 +24,13 @@ function formValidation(){
     const notifIcons = document.querySelectorAll('.notifIcon, #notifIconSelect, #notifIconConflict');
     notifIcons.forEach(icon => icon.style.display = 'none');
 
-    // Loops through the array 
+    // Loops through the array of fields
     for(let i = 0; i < correctFields.length; i++){
         const field = correctFields[i];
         const inputElement = document.getElementById(field.id);
         const notifIcon = inputElement.parentNode.querySelector('img');
    
-        // Checks if the matched input for the form was null
+        // Checks if the input matches it's pattern, If not flag is false
         if(inputElement.value.match(field.pattern) === null) {
             flag = false;
             notifIcon.style.display = 'block';
@@ -44,7 +41,7 @@ function formValidation(){
     const dateTimeFormInput = document.getElementById('dateTime');
     const dateTimeValue = dateTimeFormInput.value;
 
-    // Checks if the value is not empty 
+    // Checks if year, day & hour are valid range
     if(dateTimeValue) {
         const selectedDateTime = new Date(dateTimeValue);
         const year = selectedDateTime.getFullYear();
@@ -59,20 +56,21 @@ function formValidation(){
         }
 
         // Index 0 is Sunday and Index 6 is Saturday
+        // Cannot be set to Sunday (0)
         if(dayOfWeek === 0){
             flag = false;
             document.getElementById('notifIconConflict').style.display = 'block';
         }
 
         // First check: Is it greater than 6:00 PM in minutes
-        // Second Check: Is it greater than 6:00 PM for hours
-        // Finale Check: Is it less than 8:00 AM for hours
+        // Second Check: Is it greater than 6:00 PM in hours
+        // Finale Check: Is it less than 8:00 AM in hours
         if(hours < 8 || (hours > 18 || (hours === 18 && minutes > 0))){
             flag = false;
             document.getElementById('notifIconConflict').style.display = 'block';
         }
 
-    // Checks by default if the value is empty
+    // When date field is empty, flag is false
     } else {
         flag = false;
         document.getElementById('notifIconConflict').style.display = 'block';
@@ -80,25 +78,22 @@ function formValidation(){
     return flag;
 }
 
-/********************************************************************
-* subClick: event.preventDefault(); prevents the page from instally *
-*           reloading when the information is sent. If the form is  *
-*           incorrect then it will not proceed with the function    *
-*           without it the form will submit without date checking.  *
-*           Once the form is submitted the first name and date get  *
-*           passed to a custom pop-up that shows the patient has    *
-*           been submitted.                                         *
-*********************************************************************/
+/*
+ * subClick: Responsible for form submission by allowing the user to 
+ *           submit the patient data if everything has been validated                                     *
+ */
 
 function subClick(){
-    // Prevents form from instantly sending
+    // Prevents form from instantly submiting
+    // Allows for pop-up to display, Without it instant submission
     event.preventDefault();
     
-    // Return if the form is wrong
-    if(!formValidation()) {
-        return;
+    // Returns false if the form is wrong, Exits function
+    if(formValidation() === false) {
+        return false;
     }
         
+        // Retrieves user input to display on pop-up
         const firstName = document.getElementById('firstName').value;
         const dateTime = document.getElementById('dateTime').value;
 

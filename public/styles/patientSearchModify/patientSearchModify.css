@@ -230,36 +230,40 @@ option {
   position: relative;
   display: inline-block;  
   width: 100%;
+  min-width: 350px;
 }
 
-#notifIcon {
+.notifIcon {
   position: absolute;
   top: 50%;
-  left: 48%;
+  left: 47%;
+  transform: translateY(-55%);
+  width: 20px;
+  height: 20px;
+  z-index: 1000;
+  display: none;
+}
+
+#notifIconClarification {
+  position: absolute;
+  top: 50%;
+  left: 47%;
   transform: translateY(-55%);
   width: 20px;
   height: 20px;
   cursor: pointer;
-}
-
-#notifIconConflict {
-  position: absolute;
-  top: 50%;
-  left: 44%;
-  transform: translateY(-55%);
-  width: 20px;
-  height: 20px;
-  cursor: pointer;
+  z-index: 1000;
 }
 
 #notifIconSelect {
   position: absolute;
   top: 3.5%;
-  left: 48%;
+  left: 46%;
   transform: translateY(-55%);
   width: 20px;
   height: 20px;
-  cursor: pointer;
+  z-index: 1000;
+  display: none;
 }
 
 #notifMsg {
@@ -267,17 +271,27 @@ option {
   position: absolute;
   bottom: 5px;
   left: 55%;
-  width: 47%;
+  width: 45%;
   background-color: darkgoldenrod;
   color: white;
   padding: 5px;
+  padding-bottom: 5px;
   border-radius: 5px;
   white-space: nowrap;
   text-align: center;
+  text-wrap: balance;
+  top: 0px;
 }
+
 
 #notifIcon:hover + #notifMsg {
   visibility: visible;
+}
+
+@media (max-width: 1485px) {
+  #notifMsg {
+    padding-bottom: 40px;
+  } 
 }
 
 #notifMsgConf {
@@ -289,9 +303,11 @@ option {
   background-color: orange;
   color: white;
   padding: 5px;
+  padding-bottom: 75px;
   border-radius: 5px;
   white-space: nowrap;
-  text-align: center;
+  text-align: left;
+  top: 0px;
 }
 
 #notifIcon:hover + #notifMsgConf {
@@ -300,6 +316,33 @@ option {
 
 #notifIconConflict:hover + #notifMsgConf {
   visibility: visible;
+}
+
+#notifIconClarification:hover + #notifMsg {
+  visibility: visible;
+}
+
+#notifIconConflict {
+  position: absolute;
+  top: 50%;
+  left: 46%;
+  transform: translateY(-55%);
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  z-index: 1000;
+  display: none;
+}
+
+#notifIconSelect {
+  position: absolute;
+  margin-top: 12px;
+  left: 46%;
+  transform: translateY(-55%);
+  width: 20px;
+  height: 20px;
+  z-index: 1000;
+  display: none;
 }
 
 #searchIcon {
