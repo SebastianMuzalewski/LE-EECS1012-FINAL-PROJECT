@@ -100,3 +100,6 @@
     border-left:1px solid #ccc;
     background-color: #497d74;
 }
+.week-calendar__day-of-week-button--highlight{
+    border-color:#139d85;
+}

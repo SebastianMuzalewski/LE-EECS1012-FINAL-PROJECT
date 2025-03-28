@@ -4,7 +4,7 @@
  */
 import { today } from "./date.js";
 import { initMonthCalendar } from "./month-calendar.js";
-
+import { initWeekCalendar } from "./week-calendar.js";
 
 
 
@@ -17,7 +17,7 @@ export function initCalendar(){
         if(selectedView==="month-selector"){
             initMonthCalendar(calendarElement,selectedDate);
         }else if(selectedView==="week-selector"){
-
+            initWeekCalendar(calendarElement,selectedDate);
         }else{
 
         }
