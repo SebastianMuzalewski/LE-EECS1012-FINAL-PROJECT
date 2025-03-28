@@ -77,3 +77,7 @@
     flex-grow: 1;
     padding-bottom: 1.5rem;
 }
+
+.month-calendar__day--highlight{
+    background-color: #139d85;
+}

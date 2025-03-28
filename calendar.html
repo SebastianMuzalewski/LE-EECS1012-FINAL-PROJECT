@@ -61,268 +61,29 @@
             <div class="date-info">
                 
                 <div class="function-box">
-                    <button class="today-function-box" type="button">
+                    <button class="today-function-box" type="button" data-nav-today-button>
                         <img src="images\calendar\today-outline.svg" alt="today">
                     </button>
 
-                    <button class="previous-function-box" type="button">
+                    <button class="previous-function-box" type="button" data-nav-previous-button>
                         <img src="images\calendar\previous.svg" alt="previous">
                     </button>
 
-                    <button class="next-function-box" type="button">
+                    <button class="next-function-box" type="button" data-nav-next-button>
                         <img src="images\calendar\next_light.svg" alt="next">
                     </button>
 
                 </div>
 
-                <span class="date-text">JANUARY 2025</span>
+                <time class="date-text" data-nav-date></time>
                 <select class="month-week-selector" data-view-select>
                   <option value="month-selector">Month</option>
                   <option value="week-selector">Week</option>
                 </select>
 
               </div>
-              <div class="calendar">
-                <div class="month-calendar month-calendar--five-week" data-month-calendar>
-                    <ul class="month-calendar__day-of-week-list">
-                        <li class="month-calendar__day-of-week">SUNDAY</li>
-                        <li class="month-calendar__day-of-week">MONDAY</li>
-                        <li class="month-calendar__day-of-week">TUESDAY</li>
-                        <li class="month-calendar__day-of-week">WEDNESDAY</li>
-                        <li class="month-calendar__day-of-week">THURSDAY</li>
-                        <li class="month-calendar__day-of-week">FRIDAY</li>
-                        <li class="month-calendar__day-of-week">SATURDAY</li>
-                    </ul>
-                    <div class="month-calendar__day-list-wrapper">
-                        <ul class="month-calendar__day-list">
-                            <li class="month-calendar__day">
-                                <button class="month-calendar__day-lable">30</button>
-                                <div class="month-calendar__event-list-wrapper">
-                                    <ul class="event-list">
-                                        <li class="event-list__item">
-                                            <button class="event event--filled">
-                                                <span class="event__color"></span>
-                                                <span class="event__title">Customer A</span>
-                                            </button>
-                                        </li>
-                                        <li class="event-list__item">
-                                            <button class="event">
-                                                <span class="event__color"></span>
-                                                <span class="event__title">Customer B</span>
-                                            </button>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </li>
-                            <li class="month-calendar__day">
-                                <button class="month-calendar__day-lable">1</button>
-                                <div class="month-calendar__event-list-wrapper">
-                                    <ul class="event-list"></ul>
-                                </div>
-                            </li>
-                            <li class="month-calendar__day">
-                                <button class="month-calendar__day-lable">2</button>
-                                <div class="month-calendar__event-list-wrapper">
-                                    <ul class="event-list"></ul>
-                                </div>
-                            </li>
-                            <li class="month-calendar__day">
-                                <button class="month-calendar__day-lable">3</button>
-                                <div class="month-calendar__event-list-wrapper">
-                                    <ul class="event-list"></ul>
-                                </div>
-                            </li>
-                            <li class="month-calendar__day">
-                                <button class="month-calendar__day-lable">4</button>
-                                <div class="month-calendar__event-list-wrapper">
-                                    <ul class="event-list"></ul>
-                                </div>
-                            </li>
-                            <li class="month-calendar__day">
-                                <button class="month-calendar__day-lable">5</button>
-                                <div class="month-calendar__event-list-wrapper">
-                                    <ul class="event-list"></ul>
-                                </div>
-                            </li>
-                            <li class="month-calendar__day">
-                                <button class="month-calendar__day-lable">6</button>
-                                <div class="month-calendar__event-list-wrapper">
-                                    <ul class="event-list"></ul>
-                                </div>
-                            </li>
-                            <li class="month-calendar__day">
-                                <button class="month-calendar__day-lable">7</button>
-                                <div class="month-calendar__event-list-wrapper">
-                                    <ul class="event-list"></ul>
-                                </div>
-                            </li>
-                            <li class="month-calendar__day">
-                                <button class="month-calendar__day-lable">8</button>
-                                <div class="month-calendar__event-list-wrapper">
-                                    <ul class="event-list"></ul>
-                                </div>
-                            </li>
-                            <li class="month-calendar__day">
-                                <button class="month-calendar__day-lable">9</button>
-                                <div class="month-calendar__event-list-wrapper">
-                                    <ul class="event-list"></ul>
-                                </div>
-                            </li>
-                            <li class="month-calendar__day">
-                                <button class="month-calendar__day-lable">10</button>
-                                <div class="month-calendar__event-list-wrapper">
-                                    <ul class="event-list"></ul>
-                                </div>
-                            </li>
-                            <li class="month-calendar__day">
-                                <button class="month-calendar__day-lable">11</button>
-                                <div class="month-calendar__event-list-wrapper">
-                                    <ul class="event-list"></ul>
-                                </div>
-                            </li>
-                            <li class="month-calendar__day">
-                                <button class="month-calendar__day-lable">12</button>
-                                <div class="month-calendar__event-list-wrapper">
-                                    <ul class="event-list"></ul>
-                                </div>
-                            </li>
-                            <li class="month-calendar__day">
-                                <button class="month-calendar__day-lable">13</button>
-                                <div class="month-calendar__event-list-wrapper">
-                                    <ul class="event-list"></ul>
-                                </div>
-                            </li>
-                            <li class="month-calendar__day">
-                                <button class="month-calendar__day-lable">14</button>
-                                <div class="month-calendar__event-list-wrapper">
-                                    <ul class="event-list"></ul>
-                                </div>
-                            </li>
-                            <li class="month-calendar__day">
-                                <button class="month-calendar__day-lable">15</button>
-                                <div class="month-calendar__event-list-wrapper">
-                                    <ul class="event-list"></ul>
-                                </div>
-                            </li>
-                            <li class="month-calendar__day">
-                                <button class="month-calendar__day-lable">16</button>
-                                <div class="month-calendar__event-list-wrapper">
-                                    <ul class="event-list"></ul>
-                                </div>
-                            </li>
-                            <li class="month-calendar__day">
-                                <button class="month-calendar__day-lable">17</button>
-                                <div class="month-calendar__event-list-wrapper">
-                                    <ul class="event-list"></ul>
-                                </div>
-                            </li>
-                            <li class="month-calendar__day">
-                                <button class="month-calendar__day-lable">18</button>
-                                <div class="month-calendar__event-list-wrapper">
-                                    <ul class="event-list"></ul>
-                                </div>
-                            </li>
-                            <li class="month-calendar__day">
-                                <button class="month-calendar__day-lable">19</button>
-                                <div class="month-calendar__event-list-wrapper">
-                                    <ul class="event-list"></ul>
-                                </div>
-                            </li>
-                            <li class="month-calendar__day">
-                                <button class="month-calendar__day-lable">20</button>
-                                <div class="month-calendar__event-list-wrapper">
-                                    <ul class="event-list"></ul>
-                                </div>
-                            </li>
-                            <li class="month-calendar__day">
-                                <button class="month-calendar__day-lable">21</button>
-                                <div class="month-calendar__event-list-wrapper">
-                                    <ul class="event-list"></ul>
-                                </div>
-                            </li>
-                            <li class="month-calendar__day">
-                                <button class="month-calendar__day-lable">22</button>
-                                <div class="month-calendar__event-list-wrapper">
-                                    <ul class="event-list"></ul>
-                                </div>
-                            </li>
-                            <li class="month-calendar__day">
-                                <button class="month-calendar__day-lable">23</button>
-                                <div class="month-calendar__event-list-wrapper">
-                                    <ul class="event-list"></ul>
-                                </div>
-                            </li>
-                            <li class="month-calendar__day">
-                                <button class="month-calendar__day-lable">24</button>
-                                <div class="month-calendar__event-list-wrapper">
-                                    <ul class="event-list"></ul>
-                                </div>
-                            </li>
-                            <li class="month-calendar__day">
-                                <button class="month-calendar__day-lable">25</button>
-                                <div class="month-calendar__event-list-wrapper">
-                                    <ul class="event-list"></ul>
-                                </div>
-                            </li>
-                            <li class="month-calendar__day">
-                                <button class="month-calendar__day-lable">26</button>
-                                <div class="month-calendar__event-list-wrapper">
-                                    <ul class="event-list"></ul>
-                                </div>
-                            </li>
-                            <li class="month-calendar__day">
-                                <button class="month-calendar__day-lable">27</button>
-                                <div class="month-calendar__event-list-wrapper">
-                                    <ul class="event-list"></ul>
-                                </div>
-                            </li>
-                            <li class="month-calendar__day">
-                                <button class="month-calendar__day-lable">28</button>
-                                <div class="month-calendar__event-list-wrapper">
-                                    <ul class="event-list"></ul>
-                                </div>
-                            </li>
-                            <li class="month-calendar__day">
-                                <button class="month-calendar__day-lable">29</button>
-                                <div class="month-calendar__event-list-wrapper">
-                                    <ul class="event-list"></ul>
-                                </div>
-                            </li>
-                            <li class="month-calendar__day">
-                                <button class="month-calendar__day-lable">30</button>
-                                <div class="month-calendar__event-list-wrapper">
-                                    <ul class="event-list"></ul>
-                                </div>
-                            </li>
-                            <li class="month-calendar__day">
-                                <button class="month-calendar__day-lable">31</button>
-                                <div class="month-calendar__event-list-wrapper">
-                                    <ul class="event-list"></ul>
-                                </div>
-                            </li>
-                            <li class="month-calendar__day">
-                                <button class="month-calendar__day-lable">1</button>
-                                <div class="month-calendar__event-list-wrapper">
-                                    <ul class="event-list"></ul>
-                                </div>
-                            </li>
-                            <li class="month-calendar__day">
-                                <button class="month-calendar__day-lable">2</button>
-                                <div class="month-calendar__event-list-wrapper">
-                                    <ul class="event-list"></ul>
-                                </div>
-                            </li>
-                            <li class="month-calendar__day">
-                                <button class="month-calendar__day-lable">3</button>
-                                <div class="month-calendar__event-list-wrapper">
-                                    <ul class="event-list"></ul>
-                                </div>
-                            </li>
+              <div class="calendar" data-calendar>
 
-                        </ul>
-                    </div>
-                
-                </div>
               <div class="week-calendar" data-week-calendar style="display: none">
                     <ul class="week-calendar__day-of-week-list">
                         <li class="week-calendar__day-of-week">
@@ -684,5 +445,53 @@
         </footer>
 
     </div>
+
+
+    <template data-template="month-calendar">
+        <div class="month-calendar" data-month-calendar>
+            <ul class="month-calendar__day-of-week-list">
+                <li class="month-calendar__day-of-week">SUNDAY</li>
+                <li class="month-calendar__day-of-week">MONDAY</li>
+                <li class="month-calendar__day-of-week">TUESDAY</li>
+                <li class="month-calendar__day-of-week">WEDNESDAY</li>
+                <li class="month-calendar__day-of-week">THURSDAY</li>
+                <li class="month-calendar__day-of-week">FRIDAY</li>
+                <li class="month-calendar__day-of-week">SATURDAY</li>
+            </ul>
+            <div class="month-calendar__day-list-wrapper">
+                <ul class="month-calendar__day-list" data-month-calendar-day-list>
+                   
+                </ul>
+            </div>
+        
+        </div>
+    </template>
+
+    <template data-template="month-calendar-day">
+        <li class="month-calendar__day" data-month-calendar-day>
+            <button class="month-calendar__day-lable" data-month-calendar-day-lable></button>
+            <div class="month-calendar__event-list-wrapper" data-month-calendar-list-wrapper>
+                <ul class="event-list" data-event-list></ul>
+            </div>
+        </li>
+    </template>
+    
+    <template data-template="event-list-item">
+        <li class="event-list__item" data-event-list-item>
+            
+        </li>
+    </template>
+    <template data-template="event">
+        <button class="event" data-event>
+            <span class="event__color"></span>
+            <span class="event__title" data-event-title></span>
+            <span class="event__time">
+                <time data-event-start-time></time> - <time data-event-end-time></time>
+            </span>
+        </button>
+    </template>
+
+
+
     </body>
 </html>

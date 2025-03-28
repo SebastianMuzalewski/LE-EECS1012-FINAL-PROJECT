@@ -2,23 +2,36 @@
  * calendar-view is a function to display month and week calendar table
  * when the user select the select it from the month-week-selector
  */
+import { today } from "./date.js";
+import { initMonthCalendar } from "./month-calendar.js";
+
+
+
 
 export function initCalendar(){
-    const monthCalendarElement= document.querySelector("[data-month-calendar]")
-    const weekCalendarElement= document.querySelector("[data-week-calendar]")
+    const calendarElement=document.querySelector("[data-calendar]");
+    let selectedView="month-selector";
+    let selectedDate=today();
+    function refreshCalendar(){
+        calendarElement.replaceChildren();
+        if(selectedView==="month-selector"){
+            initMonthCalendar(calendarElement,selectedDate);
+        }else if(selectedView==="week-selector"){
+
+        }else{
+
+        }
+    }
     document.addEventListener("view-change",
         (event)=>{
-            const selectedView=event.detail.view;
-            if(selectedView==="month-selector"){
-                monthCalendarElement.style.display="flex";
-                weekCalendarElement.style.display="none";
-            }else if(selectedView=="week-selector"){
-                weekCalendarElement.style.display="flex";
-                monthCalendarElement.style.display="none";
-            }else{
-                weekCalendarElement.style.display="none";
-                monthCalendarElement.style.display="none";
-            }
+            selectedView=event.detail.view;
+            refreshCalendar()
+            
         }
     );
+    document.addEventListener("date-change", (event)=>{
+        selectedDate=event.detail.date;
+        refreshCalendar();
+    })
+    refreshCalendar();
 }
