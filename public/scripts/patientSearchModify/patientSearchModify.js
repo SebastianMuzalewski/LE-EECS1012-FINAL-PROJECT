@@ -1,7 +1,3 @@
-import { patientData } from "./patients.js";
-
-console.log(patientData); 
-
 /*
  * populateData: Populates the table with pre-defined patient info.
  *               Only displays the full name & date in the table, While everything
@@ -11,28 +7,35 @@ console.log(patientData);
 
 function populateData(){
     const tableBody = document.getElementById("patientDataTable");
-    
-    // Iterates over the patient array and grabs: firstName, lastName & Date
-    patientData.forEach(patient => {
-        const row = document.createElement("tr");
 
-        const fullNameCell = document.createElement("td");
+    fetch('/api/patientData')
+        .then(response => response.json())
+        .then(patientData => {
+             // Iterates over the patient array and grabs: firstName, lastName & Date
+            patientData.forEach(patient => {
+                const row = document.createElement("tr");
         
-        fullNameCell.textContent = `${patient.firstName} ${patient.lastName}`;
-     
-        const dateCell = document.createElement("td");
-        dateCell.textContent = patient.dateTime;
-
-        // Adds Name & Date, Then adds the row
-        row.appendChild(fullNameCell);
-        row.appendChild(dateCell);
-        tableBody.appendChild(row)
-
-        // When the populateForm function is called the patients information populates
-        row.addEventListener("click" , function() {
-            populateForm(patient);
+                const fullNameCell = document.createElement("td");
+                
+                fullNameCell.textContent = `${patient.firstName} ${patient.lastName}`;
+             
+                const dateCell = document.createElement("td");
+                dateCell.textContent = patient.dateTime;
+        
+                // Adds Name & Date, Then adds the row
+                row.appendChild(fullNameCell);
+                row.appendChild(dateCell);
+                tableBody.appendChild(row)
+        
+                // When the populateForm function is called the patients information populates
+                row.addEventListener("click" , function() {
+                    populateForm(patient);
+                });
+            });
+        })
+        .catch(error => {
+            console.log('Patient was fetched incorrectly', error);
         });
-    });
 }
 
 /*
@@ -65,7 +68,7 @@ function populateForm(patient){
     // the date format need to correct display the date in the input field (YYYY-MM-DDTHH:mm)
     const formattedDateTime = localDate.toISOString().slice(0, 16);
     
-    // Same as above but set for the end date
+    // Same as above but set for the end time and gets the time for an hour later
     const formattedEndTime = new Date(formattedDate.getTime() + 60 * 60 * 1000);
     const localEndTime = new Date(formattedEndTime.getTime() - formattedEndTime.getTimezoneOffset() * 60000);
     const formattedDateEndTime = localEndTime.toISOString().slice(0,16);
