@@ -20,7 +20,7 @@ var patientData = [
         curMed: "Ibuprofen",
         medCond: "None",
         additionalInfo: "Regular checkup",
-        endTime: null,
+        endTime: "2025-03-12T19:00",
     },
     {
         firstName: "Bob", 

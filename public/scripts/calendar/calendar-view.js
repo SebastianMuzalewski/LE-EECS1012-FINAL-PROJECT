@@ -5,7 +5,7 @@
 import { today } from "./date.js";
 import { initMonthCalendar } from "./month-calendar.js";
 import { initWeekCalendar } from "./week-calendar.js";
-
+import { patientData} from "/public/scripts/patientSearchModify/patients.js";
 
 
 export function initCalendar(){
@@ -15,9 +15,9 @@ export function initCalendar(){
     function refreshCalendar(){
         calendarElement.replaceChildren();
         if(selectedView==="month-selector"){
-            initMonthCalendar(calendarElement,selectedDate);
+            initMonthCalendar(calendarElement,selectedDate, patientData);    //display calendar month when it gotta selected
         }else if(selectedView==="week-selector"){
-            initWeekCalendar(calendarElement,selectedDate);
+            initWeekCalendar(calendarElement,selectedDate, patientData);
         }else{
 
         }

@@ -9,12 +9,12 @@ const dateFormatter= new Intl.DateTimeFormat("en-US",{
     weekday:'short'
 });
 
-export function initWeekCalendar(parent, selectedDate, eventStore){
+export function initWeekCalendar(parent, selectedDate, eventData=[]){
 
     const calendarContent=calendarTemplateElement.content.cloneNode(true);
     const calendarElement= calendarContent.querySelector("[data-week-calendar]");
     const calendarDayOfWeekListElement = calendarElement.querySelector("[data-week-calendar-day-of-week-list]");
-    const calendarAllDayListElement= calendarElement.querySelector("data-week-calendar-all-day-list");
+    const calendarAllDayListElement= calendarElement.querySelector("[data-week-calendar-all-day-list]");
     const calendarColumnsElement=calendarElement.querySelector("[data-week-calendar-columns]");
 
 
@@ -23,7 +23,7 @@ export function initWeekCalendar(parent, selectedDate, eventStore){
 
 
         initDayOfWeek(calendarDayOfWeekListElement,selectedDate, weekDay);
-        initColumn(calendarColumnsElement,weekDay);
+        initColumn(calendarColumnsElement,weekDay, eventData);
     }
     parent.appendChild(calendarElement);
 }
@@ -47,10 +47,37 @@ function initDayOfWeek(parent,selectedDate,weekDay){
 }
 
 
-function initColumn(parent,weekDay){
+function initColumn(parent,weekDay,eventData){
     const calendarColumnContent= calendarColumnTemplateElement.content.cloneNode(true);
     const calendarColumnElement= calendarColumnContent.querySelector("[data-week-calendar-column]");
     const calendarColumnCellElements= calendarColumnElement.querySelectorAll("[data-week-calendar-cell]");
+    const eventList = calendarColumnElement.querySelector("[data-event-list]");
+    const dayEvents = eventData.filter(event => 
+        isTheSameDay(new Date(event.dateTime.replace(",", "")), weekDay)
+    );
+
+    for (const event of dayEvents) {
+        const start = new Date(event.dateTime);
+        const end = event.endTime ? new Date(event.endTime) : new Date(start.getTime() + 60 * 60 * 1000); // default +1 hour
+    
+        const startHour = start.getHours();
+        const startMinutes = start.getMinutes();
+        const durationMinutes = (end - start) / (1000 * 60); // convert ms to minutes
+    
+        const eventBlock = document.createElement("div");
+        eventBlock.classList.add("event");
+        const startTime=start.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+        const endTime=end.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+        eventBlock.textContent = `${event.firstName} \n${startTime}-${endTime}`;
+        eventBlock.style.position = "absolute";
+        eventBlock.style.top = `${(startMinutes / 60) * 100}%`;
+        eventBlock.style.height = `${(durationMinutes / 60) * 100}%`;
+        const targetCell = calendarColumnCellElements[startHour];
+        if (targetCell) {
+            targetCell.style.position = "relative"; 
+            targetCell.appendChild(eventBlock);
+        }
+    }
 
     parent.appendChild(calendarColumnElement);
 }

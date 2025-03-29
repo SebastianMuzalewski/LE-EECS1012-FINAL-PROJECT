@@ -107,3 +107,31 @@ position: relative;
   display: flex;
   flex-direction: column;
 }
+.event {
+  color: white;
+  font-size: 0.8rem;
+  background-color: #71bbb2;
+  margin: 2px 0;
+  padding: 2px 4px;
+  border-radius: 4px;
+  overflow: hidden;
+  white-space: pre-line;
+  text-overflow: ellipsis;
+}
+.month-event-button {
+  background-color: #71bbb2;
+  color: white;
+  border: none;
+  border-radius: 999px;
+  padding: 4px 10px;
+  font-size: 0.75rem;
+  cursor: pointer;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  max-width: 100%;
+}
+
+.month-event-button:hover {
+  background-color: #51968e;
+}
