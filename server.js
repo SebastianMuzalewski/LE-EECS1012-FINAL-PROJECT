@@ -38,10 +38,6 @@ app.listen(port, () => {
 });
 
 // patientData defined here for better global scope
-app.get("/api/patientData",(req,res)=>{
-    res.json(patientData);
-})
-
 let patientData = [
     {
         firstName: "Alice", 
