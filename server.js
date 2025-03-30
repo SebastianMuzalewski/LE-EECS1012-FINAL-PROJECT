@@ -27,13 +27,18 @@ app.post("/api/addPatient", (req, res) => {
     res.status(201).json({ message: "Patient has been added", patient: newPatient });
 });
 
+// When patient data needs to be overrided
+app.post("/api/savePatientData", (req, res) =>{
+    patientData = req.body;
+})
+
 // Start the server
 app.listen(port, () => {
     console.log(`Server is running at http://localhost:${port}`);
 });
 
 // patientData defined here for better global scope
-const patientData = [
+let patientData = [
     {
         firstName: "Alice", 
         lastName: "Smith",

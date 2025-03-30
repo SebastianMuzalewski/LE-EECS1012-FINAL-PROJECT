@@ -77,7 +77,6 @@ function formValidation(){
     }
     return flag;
 }
-
 /*
  * subClick: Responsible for form submission by allowing the user to 
  *           submit the patient data if everything has been validated                                     *
