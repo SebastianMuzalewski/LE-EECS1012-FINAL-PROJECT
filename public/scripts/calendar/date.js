@@ -1,3 +1,24 @@
+/**
+ * today() – Returns current date with time set to 12:00.
+
+    addMonths(date, months) – Adds given number of months to a date.
+
+    subtractMonth(date, months) – Subtracts given number of months.
+
+    addDays(date, days) – Adds given number of days to a date.
+
+    subtractDays(date, days) – Subtracts given number of days.
+
+    generateMonthCalendarDays(currentDate) – Generates a full list of calendar days for a monthly view, including overflow from previous/next months to fill weeks.
+
+    isTheSameDay(dateA, dateB) – Checks if two dates are the same (year, month, day).
+
+    generateWeekDays(date) – Returns an array of 7 days for the week containing the given date.
+
+    getLastDayOfMonthDate(date) (internal) – Finds the last day of a given month.
+ * 
+ */
+
 export function today(){
     const now=new Date();
     return new Date(
