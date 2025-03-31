@@ -1,0 +1,208 @@
+/* Procedure page*/
+
+* {
+    color: #efe9de;
+  }
+  
+  body {
+    background-color:#121212;
+  }
+
+
+
+
+  #services-currently-offered ul {
+    border-color: #444;
+    background-color: #1e1e1e;
+  }
+  
+  #services-currently-offered li{
+    border-color: #444;
+    background-color: #222;
+  
+  }
+  
+  #services-currently-offered li:hover{
+    background-color: #333;
+  }
+
+  #details-about-service section{
+    background-color: #1e1e1e;
+    border-color: #444;
+  }
+  #additonal-info {
+    background-color: #1e1e1e;
+    border-color: #444;
+  }
+  .details-about-service-class{
+    background-color: #333;
+    border-color:  #444; 
+}
+
+
+/* footer*/
+
+footer {
+    background-color: #1e1e1e;
+  }
+
+  #footerTitle {
+    color: white;
+  }
+
+  /* Footer Text + Images*/
+  
+  .info {
+    color: white;
+  }
+    
+  #Copyright {
+    color: white;
+  }
+
+
+
+
+
+/*calender*/
+/* calendar Styles */
+@import url(./month-calendar.css);
+@import url(./event-list.css);
+@import url(./event.css);
+@import url(./root.css);
+@import url(./week-calendar.css);
+
+
+/***main***/
+
+/*date info function bar*/
+
+.date-info {
+  border-color: #333;
+  background-color: #444;
+}
+.month-event-button {
+  background-color: #121212;
+  color: white;
+  border: none;
+  border-radius: 999px;
+  padding: 4px 10px;
+  font-size: 0.75rem;
+  cursor: pointer;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  max-width: 100%;
+}
+
+.month-event-button:hover {
+  background-color: #333;
+}
+
+
+
+
+
+
+
+
+/* Navbar Styling */
+/** Whole Navbar + Title **/
+
+nav {
+    border-right: solid #555;
+    border-bottom: solid #555;
+    border-top: solid #555;
+    background-color:#2e2e2e;
+   }
+   
+   nav > ul {
+     border-bottom: solid #555;
+   }
+   
+   ul > li {
+    border-top: solid #555;
+   }
+       
+  .navClick:hover {
+    background-color: #444;
+   }
+
+   .navClick a{
+      color: white;
+   }
+
+
+
+   /** Navbar Bookmark **/
+   
+   #banner-leaf {
+     border: 2px solid #444;
+     background-color: #2e2e2e;
+   }
+
+  #banner-leaf:hover {
+    background-color: #444;  
+  }
+   
+   #appearanceToggleName, #languageToggleName {
+     color: white;
+   }
+
+   
+   
+   #languageToggle {
+     background-color: #444;
+     color: white;
+     border: 2px solid #555;
+   }
+
+   select > option {
+    color: white;
+    background-color: #333;
+   }
+
+   /*** Dark Mode Button ***/
+   
+   .slider{
+     background-color: #555;
+   }
+   
+   .slider::before {
+     background: white;
+   }
+
+   input:checked+.slider{
+     background-color: #888;
+   }
+
+
+
+.month-calendar__day {
+    background-color: #444; }
+
+
+
+
+    .week-calendar__cell{
+      height:4rem;
+      border-top: 1px solid #ccc;
+      border-left:1px solid #ccc;
+      background-color: #444;
+  }
+  .week-calendar__day-of-week-button--highlight{
+      border-color:#139d85;
+  }
+
+
+
+  .event {
+    color: white;
+    font-size: 0.8rem;
+    background-color: #121212;
+    margin: 2px 0;
+    padding: 2px 4px;
+    border-radius: 4px;
+    overflow: hidden;
+    white-space: pre-line;
+    text-overflow: ellipsis; }
