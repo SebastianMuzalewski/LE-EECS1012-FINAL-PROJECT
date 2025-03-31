@@ -1,20 +1,14 @@
 function darkmode(){
-    var darkmode_main_procedure  = document.getElementById("darkmode_main_procedure");
     var darkmode_toggle = document.getElementById("appearanceToggle");
-    var darkmode_state_procedure = document.getElementById("state_procedure");
-    var darkmode_navbar_procedure  = document.getElementById("darkmode_navbar_procedure");
-    var darkmode_footer_procedure = document.getElementById("darkmode_footer_procedure");
+    var darkmode_state_darkmode = document.getElementById("state");
+    var darkmode = document.getElementById("darkmode");
     
     if (darkmode_toggle.checked) {
-        darkmode_main_procedure.setAttribute("href", "styles/procedure/procedure_darkmode.css");
-        darkmode_navbar_procedure.setAttribute("href", "styles/navbar_darkmode.css")
-        darkmode_footer_procedure.setAttribute("href", "styles/footer_darkmode.css")
-        darkmode_state_procedure.innerHTML = "On"
+        darkmode_state_darkmode.innerHTML = "On"    //changes the state of the dark mode to on 
+        darkmode.setAttribute ("href", "styles/darkmode/darkmode_universal.css"); //adds the darkmode css file to the html files that overrides the colors of the main css file
     
     } else {
-        darkmode_main_procedure.setAttribute("href", "styles/procedure/procedure.css");
-        darkmode_navbar_procedure.setAttribute("href", "styles/navbar.css");
-        darkmode_footer_procedure.setAttribute("href", "styles/footer.css");
-        darkmode_state_procedure.innerHTML = "Off"
+        darkmode_state_darkmode.innerHTML = "Off" //changes the state of the darkmmode to off
+        darkmode.setAttribute ("href" ,""); //removes the darmode css file 
     }
     }

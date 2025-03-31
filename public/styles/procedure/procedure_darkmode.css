@@ -1,39 +1,46 @@
 /* procedure Styles */
 
 /* Affects Whole Page*/
-*{
+* {
   color: #efe9de;
 }
+
+/** Main content **/
 
 body {
   display: flex;
   flex-direction: column;
-  min-height: calc(100vh-100px);
+  min-height: calc(100vh - 100px);
   background-color:#121212;
-  overflow: hidden;
   margin-left: 202px;
   margin-top: 0px;
   margin-right: 0px;
 }
 
-
 main {
-flex: 1;
-right: 0px;
-overflow: auto;
-min-height: calc(100vh-200px);
-margin-bottom: 2.5px;
-width: 100%;
+  flex: 1;
+  right: 0px;
+  min-height: calc(100vh - 200px);
+  margin-bottom: 2.5px;
+  width: 100%;
+}
+
+/** Header Text & Content **/
+
+header {
+  text-align: center;
+  height: 90px;
 }
 
 #splitContainer {
   display: flex; 
   flex-direction: row; 
-  border: #444 solid;
+  /*border: #444 solid;*/
   min-height: calc(100vh - 195px);
   gap: 10px;
   margin-left: 20px;
   margin-right: 20px;
+  margin-bottom: 100px;
 }
 
 #leftSide, #rightSide {
@@ -47,14 +54,14 @@ width: 100%;
   display: flex;
   align-items: flex-start;
   text-align: left;
-  border: #444 solid;
+  /*border: #444 solid;*/
 }
 
 #rightSide {
   display: flex;
   align-items: flex-start;
   text-align: left;
-  border: #444 solid;
+  /*border: #444 solid;*/
 }
 
 body.navbar-closed main {
@@ -80,10 +87,11 @@ transform: translateX(0px);
   border-width: 2px;
   list-style-type: none;
   padding-left: 0px;
-  height: 100%;
-  max-width: 100%;
+  height:65vh;
+  width: 1000px;
+  max-width: 35vw;
   overflow: auto;
-  border-color: #444 ;
+  border-color: #444;
   background-color: #1e1e1e;
 }
 
@@ -94,8 +102,11 @@ transform: translateX(0px);
   padding-bottom: 7px;
   font-size: 20px;
   border-width: 1px;
-  border-color: #444 ;
+  border-color: #444;
   background-color: #222;
+  border-width: 1px;
+  padding-left: 8px;
+
 }
 
 #services-currently-offered li:hover{
@@ -114,11 +125,11 @@ transform: translateX(0px);
   border-style: solid;
   border-width: 2px;
   text-align: left;
-  height: 80%;
+  height: 65vh;
   width: 100%;
   overflow: auto;
-  border-color: #444 ;
   background-color: #1e1e1e;
+  border-color: #444;
 }
 #additonal-info {
   border-style: solid;
@@ -126,8 +137,8 @@ transform: translateX(0px);
   margin-right: 5px;
   height: 120px;
   overflow: auto;
-  border-color: #444 ;
   background-color: #1e1e1e;
+  border-color: #444;
 }
 .details-about-service-class{
   border-top-style: solid;
