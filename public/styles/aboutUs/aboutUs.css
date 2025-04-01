@@ -43,7 +43,7 @@ h3 {
   display: flex; 
 }
 
-#leftSide, #rightSide , #middle{
+#leftSide1, #rightSide1 , #middle1{
   flex: 1;
   padding: 0px;
   width: 48%;

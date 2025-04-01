@@ -207,45 +207,17 @@ nav {
     white-space: pre-line;
     text-overflow: ellipsis; }
 
-
-
-
-
-
-
-
-    #splitContainer {
-      display: flex; 
-    }
     
-    #leftSide, #rightSide , #middle{
-      flex: 1;
-      padding: 0px;
-      width: 48%;
-      flex-direction: column;
-      text-align: center;
-      justify-content: space-between;
-      margin-left: 10px;
-      margin-right: 10px;
+    #leftSide1, #rightSide1 , #middle1{
       background-color: #222
-    }
-    
-    .photoBorder img {
-      border-radius: 50%;
     }
     
     .photoBorder{
       background-color: #444;
-      font-weight: bold;
-      font-size: min(2.5vh, 2.5vw);
       
     }
     
     .bio{
-      overflow: auto;
-      text-align: center;
-      font-size: min(2.5vh, 2.5vw);
-      height: 37vh;
       background-color: #444;
       color: #EEEEEE;
       
@@ -253,16 +225,10 @@ nav {
     }
     
     .github{
-      margin-top: 15px;
-      overflow: auto;
-      text-align: center;
-      font-size: min(2.5vh, 2.5vw);
-      height: 10vh;
       background-color: #444;
     }
     
     .github a{
-      font-weight: bold;
       color: #00ADB5;
     }
     
