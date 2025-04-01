@@ -35,7 +35,6 @@ header {
 #splitContainer {
   display: flex; 
   flex-direction: row; 
-  border: white solid;
   min-height: calc(100vh - 195px);
   gap: 10px;
   margin-left: 20px;
@@ -54,19 +53,17 @@ header {
   display: flex;
   align-items: flex-start;
   text-align: left;
-  border: red solid;
 }
 
 #rightSide {
   display: flex;
   align-items: flex-start;
   text-align: left;
-  border: blue solid;
 }
 /** Form content **/
 
 #searchBar {
-  width: 95%;
+  width: 50%;
   margin-bottom: 20px;
   font-size: 15px;
   border: 2px solid black;
@@ -74,6 +71,7 @@ header {
   background-color: white;
   display: flex;
   left: 15%;
+  margin-left: 35%;
 }
 
 table {
@@ -166,7 +164,6 @@ option {
   background-color: #497d74;
   color: #efe9de;
   margin-bottom: 15px;
-  z-index: 1000;
   display: none;
   width: 300px;
   border-style: solid;
@@ -240,7 +237,6 @@ option {
   transform: translateY(-55%);
   width: 20px;
   height: 20px;
-  z-index: 1000;
   display: none;
 }
 
@@ -252,7 +248,6 @@ option {
   width: 20px;
   height: 20px;
   cursor: pointer;
-  z-index: 1000;
 }
 
 #notifIconSelect {
@@ -262,7 +257,6 @@ option {
   transform: translateY(-55%);
   width: 20px;
   height: 20px;
-  z-index: 1000;
   display: none;
 }
 
@@ -330,7 +324,6 @@ option {
   width: 20px;
   height: 20px;
   cursor: pointer;
-  z-index: 1000;
   display: none;
 }
 
@@ -341,18 +334,16 @@ option {
   transform: translateY(-55%);
   width: 20px;
   height: 20px;
-  z-index: 1000;
   display: none;
 }
 
 #searchIcon {
   position: absolute;
   top: 12%;
-  left: 92%;
+  left: 82%;
   width: 20px;
   height: 20px;
   cursor: pointer;
-  z-index: 1000;
 }
 
 #searchContain {

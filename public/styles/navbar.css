@@ -15,6 +15,7 @@ nav {
     background-color:#497d74;
     position: fixed;
     transition: transform 0.3s ease-in-out;
+    z-index: 10;
    }
 
    .nav-hidden {
@@ -150,7 +151,7 @@ nav {
 
   body.navbar-open {
     transition: margin-left 0.25s ease-in;
-    margin-left: 200px;
+    margin-left: 202.4px;
   }
 
   body {
