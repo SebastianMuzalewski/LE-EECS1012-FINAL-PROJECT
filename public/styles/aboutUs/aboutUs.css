@@ -10,9 +10,9 @@
 body {
   display: flex;
   flex-direction: column;
+  overflow: auto;
   min-height: calc(100vh - 100px);
   background-color:#27445D;
-  overflow: hidden;
   margin-left: 202px;
   margin-top: 0px;
   margin-right: 0px;
@@ -21,11 +21,10 @@ body {
 main {
   flex: 1;
   right: 0px;
-  overflow: hidden; 
   min-height: calc(100vh - 200px);
   margin-bottom: 2.5px;
   width: 100%;
-  border: white solid;
+  height: auto;
 }
 
 /** Header Text & Content **/
@@ -39,4 +38,63 @@ h3 {
   bottom: 15px;
   position: relative;
 }
+
+#splitContainer {
+  display: flex; 
+}
+
+#leftSide, #rightSide , #middle{
+  flex: 1;
+  padding: 0px;
+  width: 48%;
+  flex-direction: column;
+  text-align: center;
+  justify-content: space-between;
+  margin-left: 10px;
+  margin-right: 10px;
+  background-color: rgb(76, 187, 152);
+}
+
+.photoBorder img {
+  border-radius: 50%;
+}
+
+.photoBorder{
+  background-color: #1b7062;
+  font-weight: bold;
+  font-size: min(2.5vh, 2.5vw);
+  
+}
+
+.bio{
+  overflow: auto;
+  text-align: center;
+  font-size: min(2.5vh, 2.5vw);
+  height: 37vh;
+  background-color: #1b7062;
+
+}
+
+.github{
+  margin-top: 15px;
+  overflow: auto;
+  text-align: center;
+  font-size: min(2.5vh, 2.5vw);
+  height: 10vh;
+  background-color: #1b7062;
+}
+
+.github a{
+  font-weight: bold;
+  color: black
+}
+
+.github a:hover{
+  color: blue;
+}
+
+
+
+
+
 
