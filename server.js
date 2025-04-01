@@ -30,6 +30,7 @@ app.post("/api/addPatient", (req, res) => {
 // When patient data needs to be overrided
 app.post("/api/savePatientData", (req, res) =>{
     patientData = req.body;
+    res.status(200).json({message: "Patient data has been updated"})
 })
 
 // Start the server
@@ -208,3 +209,6 @@ let patientData = [
         endTime: null,
     },
 ];
+
+// Required for JEST testing
+module.exports = app;
