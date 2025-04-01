@@ -8,6 +8,7 @@
 function populateData(){
     const tableBody = document.getElementById("patientDataTable");
 
+    // Sends a GET requst to retrieve the pre-defined patient data in server.js
     fetch('/api/patientData')
         .then(response => response.json())
         .then(patientData => {
@@ -22,12 +23,12 @@ function populateData(){
                 const dateCell = document.createElement("td");
                 dateCell.textContent = patient.dateTime;
         
-                // Adds Name & Date, Then adds the row
+                // Adds Name & Date, Then adds the next row for patient insertion
                 row.appendChild(fullNameCell);
                 row.appendChild(dateCell);
                 tableBody.appendChild(row)
         
-                // When the populateForm function is called the patients information populates
+                // When the specified row is selected the populateForm function is called and the patients information populates the fields
                 row.addEventListener("click" , function() {
                     populateForm(patient);
                 });

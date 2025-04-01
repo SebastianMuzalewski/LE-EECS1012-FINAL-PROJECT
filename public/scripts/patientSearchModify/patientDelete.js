@@ -1,4 +1,4 @@
-// Global Scope
+// Global Variables
 let selectedRowIndex = null; 
 let selectedPatientName = "";
 
@@ -11,7 +11,7 @@ document.getElementById('patientDataTable').addEventListener('click', function(e
         // Sets the patient name based on the first index of the row
         selectedPatientName = row.cells[0].textContent; 
 
-        console.log("Selected Patient Name:", selectedPatientName); // Console log the name
+        console.log("Selected Patient Name:", selectedPatientName); // Checking for selected Patient
     }
 });
 
@@ -62,13 +62,15 @@ function subDeleteClick() {
 
     
     document.getElementById('btnCloseYes').addEventListener('click', function() {
-        // Checks if the row is not null
+        // Checks if the choosen name is not null
         if (selectedPatientName) {
     
                 // Remove the patient from the table
                 const table = document.getElementById('patientDataTable');
                 const rows = table.rows;
 
+                // Loops through the whole table of patients
+                // When the patient name matches cell 0 name based on row delete the patient
                 for (let i = 0; i < rows.length; i++) {
                     if (rows[i].cells[0].textContent === selectedPatientName) {
                         table.deleteRow(i);

@@ -99,13 +99,12 @@ document.getElementById('patientDataTable').addEventListener('click', function(e
 
 function subSaveClick() {
 
+    // Gets the patientDatas
     fetch('/api/patientData')
         .then(response => {
             return response.json()
         })
         .then(data => {
-             // Iterates over the patient array and grabs: firstName, lastName & Date
-           
             patientData = data;
             console.log(patientData);
         
@@ -113,7 +112,7 @@ function subSaveClick() {
                 return;
             }
         
-            // Grabs all the values 
+            // Grabs all the values realted to the patient
             var firstName = document.getElementById('firstName').value;
             var lastName = document.getElementById('lastName').value;
             var dateTime = document.getElementById('dateTime').value;
@@ -146,8 +145,9 @@ function subSaveClick() {
             // Based on what was selected. The values become updated in the array
             var rowIndex = window.selectedRowIndex;
             var updatedPatient = patientData[rowIndex];
-            console.log("Updating patient at index:", rowIndex, updatedPatient);
+            console.log("Updating patient at index:", rowIndex, updatedPatient); // Logs the row at which the patient was being updated
 
+            // Updates the patient with new form values 
             updatedPatient.firstName = firstName;
             updatedPatient.lastName = lastName;
             updatedPatient.dateTime = dateTime;
@@ -167,12 +167,13 @@ function subSaveClick() {
             updatedPatient.medCond = medCond;
             updatedPatient.additionalInfo = additionalInfo;
         
-            console.log(patientData); // Check for patientData update
+            console.log(patientData); // Checks for the updated patientData
 
             
             // Clears input by calling the function
             resetFormFields();
 
+            // Sends the updated patient data back to the array using the POST request
            return fetch('api/savePatientData', {
                 method: 'POST',
                 headers: {
@@ -189,7 +190,6 @@ function subSaveClick() {
 
 // Used for clearing the forms to empty fields
 function resetFormFields() {
-
 
     // Resets the select row
     window.selectedRowIndex = null;

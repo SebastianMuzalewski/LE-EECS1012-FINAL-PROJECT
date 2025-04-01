@@ -77,6 +77,7 @@ function formValidation(){
     }
     return flag;
 }
+
 /*
  * subClick: Responsible for form submission by allowing the user to 
  *           submit the patient data if everything has been validated                                     *
@@ -99,6 +100,7 @@ function subClick(){
         document.getElementById('subInfoTime').textContent = `Date & Time: ${dateTime}`;
         document.getElementById('alertMsg').style.display = 'block';
     
+        // Patientdata collects the information needed to be passed to the addPatient API
         const patientData = {
                 firstName: document.getElementById("firstName").value, 
                 lastName: document.getElementById("lastName").value,
@@ -120,6 +122,7 @@ function subClick(){
                 additionalInfo: document.getElementById("additionalInfo").value || "",
             };
 
+    // Sends the patientData to the server
     fetch('/api/addPatient', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
