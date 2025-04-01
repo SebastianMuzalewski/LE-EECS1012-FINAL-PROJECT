@@ -206,3 +206,32 @@ nav {
     overflow: hidden;
     white-space: pre-line;
     text-overflow: ellipsis; }
+
+    
+    #leftSide1, #rightSide1 , #middle1{
+      background-color: #222
+    }
+    
+    .photoBorder{
+      background-color: #444;
+      
+    }
+    
+    .bio{
+      background-color: #444;
+      color: #EEEEEE;
+      
+    
+    }
+    
+    .github{
+      background-color: #444;
+    }
+    
+    .github a{
+      color: #00ADB5;
+    }
+    
+    .github a:hover{
+      color: #00FFFF;
+    }
