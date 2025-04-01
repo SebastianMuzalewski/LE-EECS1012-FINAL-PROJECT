@@ -128,7 +128,6 @@ option {
   background-color: #497d74;
   color: #efe9de;
   margin-bottom: 15px;
-  z-index: 1000;
   display: none;
   width: 300px;
   border-style: solid;
@@ -185,7 +184,6 @@ body.navbar-closed #alertMsg {
   transform: translateY(-55%);
   width: 20px;
   height: 20px;
-  z-index: 1000;
   display: none;
 }
 
@@ -197,7 +195,6 @@ body.navbar-closed #alertMsg {
   width: 20px;
   height: 20px;
   cursor: pointer;
-  z-index: 1000;
 }
 
 
@@ -209,7 +206,6 @@ body.navbar-closed #alertMsg {
   width: 20px;
   height: 20px;
   cursor: pointer;
-  z-index: 1000;
   display: none;
 }
 
@@ -220,7 +216,6 @@ body.navbar-closed #alertMsg {
   transform: translateY(-55%);
   width: 20px;
   height: 20px;
-  z-index: 1000;
   display: none;
 }
 
