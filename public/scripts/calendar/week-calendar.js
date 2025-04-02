@@ -58,7 +58,7 @@ function initColumn(parent,weekDay,eventData){
 
     for (const event of dayEvents) {
         const start = new Date(event.dateTime);
-        const end = event.endTime ? new Date(event.endTime) : new Date(start.getTime() + 60 * 60 * 1000); // default +1 hour
+        const end = event.endTime ? new Date(event.endTime) : new Date(start.getTime() + 60 * 60 * 1000); // default +1 hour if patient dont have end time
     
         const startHour = start.getHours();
         const startMinutes = start.getMinutes();

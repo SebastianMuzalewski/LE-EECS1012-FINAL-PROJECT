@@ -30,6 +30,23 @@ it('The homepage should be calendar.html', (done) => {
 })
 
 // David your stuff is here
-
+//
+it('Should add a new patient and return 201',()=>{
+    const newPatient={                  //create a test patient object
+        firstName:"Dave",
+        lastName:"King",
+        dateTime:"2025-04-05T10:00",
+        appointmentType:"Checkup",
+        phoneNumber:"2345-6789-0123-4567"
+    };
+    return request(app)
+        .post('/api/addPatient')            //send the the data to the server through this route
+        .send(newPatient)
+        .expect(201)                        //expect the 201 response this mean the server accepted the data and added it
+        .then(response=>{
+            expect(response.body).toBeDefined();
+            expect(response.body.patient.firstName).toBe("Dave");                //to check the response includes the added patient
+        })
+})
 
 });

@@ -105,6 +105,7 @@ position: relative;
 /*calendar*/
 .calendar{
   display: flex;
+  height: 100%;
   flex-direction: column;
 }
 .event {
