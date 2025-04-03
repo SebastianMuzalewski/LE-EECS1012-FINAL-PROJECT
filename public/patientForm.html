@@ -8,7 +8,8 @@
     <link rel="stylesheet" type="text/css" href="styles/navbar.css"/>
     <link id= "darkmode" rel="stylesheet" href=""/>
     
-    <script src="scripts/patientForm/patientForm.js"></script>
+    <script type="module" src="scripts/patientForm/formValidation.js" defer></script>
+    <script type="module" src="scripts/patientForm/patientForm.js" defer></script>
     <script src="scripts/navbarSmooth.js"></script>
     <script src="scripts/darkmode.js"></script>
 </head>
@@ -58,33 +59,33 @@
                 <div id="leftSide">
                     <h2 id="topTitle">Patient Details</h2>
                     <div id="notifContain">
-                        <input id="firstName" placeholder="First Name" type="text" maxlength="35" pattern="[A-Za-z]+" title=" Required Format: Only letters" required>
+                        <input id="firstName" placeholder="First Name" type="text" maxlength="35" pattern="[A-Za-z]+" title="Required Format: Only letters" required>
                         <img class="notifIcon" src="images/patientForm/incorrectField.png">
                     </div>
                     <div id="notifContain">  
-                        <input id="lastName" placeholder="Last Name" type="text" maxlength="35" pattern="[A-Za-z]+" title=" Required Format: Only letters" required>
+                        <input id="lastName" placeholder="Last Name" type="text" maxlength="35" pattern="[A-Za-z]+" title="Required Format: Only letters" required>
                         <img class="notifIcon" src="images/patientForm/incorrectField.png">
                     </div>  
                     <div id="notifContain"> 
-                        <input id="phoneNum" placeholder="Phone Number" type="tel" maxlength="15" pattern="^\+1\s\d{3}-\d{3}-\d{4}$" title=" Required Format: +1 234-567-8910"  required>
+                        <input id="phoneNum" placeholder="Phone Number" type="tel" maxlength="15" pattern="^\+1\s\d{3}-\d{3}-\d{4}$" title="Required Format: +1 234-567-8910" required>
                         <img class="notifIcon" src="images/patientForm/incorrectField.png">
                     </div>
                     <div id="notifContain"> 
-                        <input id="address" placeholder="Address" type="text" maxlength="35" required>
+                        <input id="address" placeholder="Address" type="text" maxlength="35" pattern=".+" title="Required Format: Cannot be empty" required>
                         <img class="notifIcon" src="images/patientForm/incorrectField.png">
                     </div>
                     <div id="notifContain"> 
-                        <input id="zipCode" placeholder="Postal Code" maxlength="7" pattern="[A-Za-z]\d[A-Za-z] \d[A-Za-z]\d" title=" Required Format: A1B 2C3" required>
+                        <input id="zipCode" placeholder="Postal Code" maxlength="7" pattern="[A-Za-z]\d[A-Za-z] \d[A-Za-z]\d" title="Required Format: A1B 2C3" required>
                         <img class="notifIcon" src="images/patientForm/incorrectField.png">
                     </div>
                     <h2>Billing information</h2>
-                        <input id="insuranceName" type="text" maxlength="35" placeholder="Insurance Provider">
+                        <input id="insuranceName" type="text" maxlength="35" pattern=".+" title="Required Format: Cannot be empty" placeholder="Insurance Provider">
                     <div id="notifContain"> 
                         <input id="billing" placeholder="Billing Address" type="text" maxlength="35" required>
                         <img class="notifIcon" src="images/patientForm/incorrectField.png">
                     </div>
                     <div id="notifContain">
-                        <input id="payMethod" placeholder="Payment method" type="text" maxlength="16" required>
+                        <input id="payMethod" placeholder="Payment method" type="text" maxlength="16" pattern=".+" title="Required Format: Cannot be empty" required>
                         <img class="notifIcon" src="images/patientForm/incorrectField.png">
                     </div>
                     <div id="notifContain"> 
@@ -111,7 +112,7 @@
             </div>
             <div id="notifContain">
                 <img id="notifIconSelect" src="images/patientForm/incorrectField.png">
-                <select id="appointmentType" placeholder="Appointment Type" required>
+                <select id="appointmentType" placeholder="Appointment Type" pattern=".+" required>
                     <option value="" disabled selected hidden>Appointment Type</option>
                     <option>Cleaning</option>
                     <option>Filling</option>
@@ -124,7 +125,7 @@
                 <input id="medCond" placeholder="Medical Conditions">
                 <label id="textTitle">Previous Surgeries/Procedures</label>
                 <textarea id="additionalInfo"></textarea>
-                <button onclick="subClick()" id='subAlert' >Submit</button>
+                <button onclick="subClick();" id='subAlert' >Submit</button>
             </div>
             </form>
         </main>
