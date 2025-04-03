@@ -6,33 +6,34 @@
  */
 
 function populateData(){
-    const tableBody = document.getElementById("patientDataTable");
+    let patientBody = document.getElementById("patientDataTable");
 
     // Sends a GET requst to retrieve the pre-defined patient data in server.js
     fetch('/api/patientData')
         .then(response => response.json())
         .then(patientData => {
-             // Iterates over the patient array and grabs: firstName, lastName & Date
-            patientData.forEach(patient => {
-                const row = document.createElement("tr");
-        
-                const fullNameCell = document.createElement("td");
+             // Iterates over the patient array from fetch
+            for(let patient of patientData) {
+                // Creates the row nad populates with name and date in correct cells
+                let patientRow = document.createElement("tr");
                 
-                fullNameCell.textContent = `${patient.firstName} ${patient.lastName}`;
+                let nameCell = document.createElement("td");
+                nameCell.textContent = `${patient.firstName} ${patient.lastName}`;
              
-                const dateCell = document.createElement("td");
+                let dateCell = document.createElement("td");
                 dateCell.textContent = patient.dateTime;
         
                 // Adds Name & Date, Then adds the next row for patient insertion
-                row.appendChild(fullNameCell);
-                row.appendChild(dateCell);
-                tableBody.appendChild(row)
+                patientRow.appendChild(nameCell);
+                patientRow.appendChild(dateCell);
+
+                patientBody.appendChild(patientRow)
         
                 // When the specified row is selected the populateForm function is called and the patients information populates the fields
-                row.addEventListener("click" , function() {
+                patientRow.addEventListener("click" , function() {
                     populateForm(patient);
                 });
-            });
+            };
         })
         .catch(error => {
             console.log('Patient was fetched incorrectly', error);
@@ -61,21 +62,15 @@ function populateForm(patient){
 
     // Date is handled manually to accomodate for Time
     // Time Zone Specific, Set to Ontario time zone in localDate (GMT-4)
-    const formattedDate = new Date(patient.dateTime);
+    let formattedDate = new Date(patient.dateTime);
     // First step: Converts passed Date/Time to timestamp
     // Second step: TimezoneOffset is used to adjust the local timezone, UTC to GMT-4
-    const localDate = new Date(formattedDate.getTime() - formattedDate.getTimezoneOffset() * 60000);
+    let localDate = new Date(formattedDate.getTime() - formattedDate.getTimezoneOffset() * 60000);
     // Last step: Converts localDate to an ISO 8601 string which extracts
     // the date format need to correct display the date in the input field (YYYY-MM-DDTHH:mm)
-    const formattedDateTime = localDate.toISOString().slice(0, 16);
-    
-    // Same as above but set for the end time and gets the time for an hour later
-    const formattedEndTime = new Date(formattedDate.getTime() + 60 * 60 * 1000);
-    const localEndTime = new Date(formattedEndTime.getTime() - formattedEndTime.getTimezoneOffset() * 60000);
-    const formattedDateEndTime = localEndTime.toISOString().slice(0,16);
+    let formattedDateTime = localDate.toISOString().slice(0, 16);
 
     console.log(formattedDate); // Console test for start date/time
-    console.log(formattedEndTime); // Console test for end date/time
 
     document.getElementById("dateTime").value = formattedDateTime;
     document.getElementById("appointmentType").value = patient.appointmentType;
@@ -84,11 +79,7 @@ function populateForm(patient){
     document.getElementById("curMed").value = patient.curMed || "";
     document.getElementById("medCond").value = patient.medCond || "";
     document.getElementById("additionalInfo").value = patient.additionalInfo || "";
-    document.getElementById("endTime").value = formattedDateEndTime;
 }
 
-// Loads the patients dynamically
-
-document.addEventListener("DOMContentLoaded", function() {
-    populateData();
-});
+// Loads the patients dynamically using the defer attribute in the html file
+populateData();
