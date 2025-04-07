@@ -1,39 +1,60 @@
 # EECS 1012 | Dental application
-This Node.js and Javscript project is made for a receptionist that is able to add
-, delete and, modify patients. The changes are then able to be reflected via a Calendar.
+This project is made for a receptionist that is able to add, delete and, modify patients. The changes are then able to be reflected via the Calendar.
 
 ## Main Features:
 - **Display Schedule**
-  - Shows the patients from the Array in server.js
-  - Updates the patients date if the date is modified
-- **Modify Patient Data**
-  - Update the information related to the patient
+  - Ability to toggle between week & day view
+  - Populates the calendar with patients located in the server
+  - Reflects modified patient data in the calendar when data is updated
 - **Register Patient**
-  - Registers a new patient via a form
+  - Registers a new patient via a form with Regex pattern checking
+- **Modify Patient Data**
+  - Updates the information related to the patient via clicking the table and saving the data
 - **Delete Patient**
-  - Deletes the patient in the table from when it's clicked
+  - Deletes the patient from the table by index location
 - **Node JS server**
-  - Responsible for running the sever that connects everything
+  - Responsible for running the application. It uses GET & POST requests to modify patient information
 
 ## Side Features:
 - **Dark Mode**
-  - Changes the pages color based on the dark mode toggle
+  - Changes the page from light to dark from a toggle button
 - **Navbar**
-  - Animated navbar for smooth operations
+  - Slight animation for the navbar
+  - Able to toggle for visible and hidden view
 - **List of Services**
-  - Shows the avaliable services for additional information for the user
+  - Displays additional infromation to the receptionist if the patient needs more information
  
 ## Technologies Used:
-- **Node JS:** JavaScript runtime environment
-- **Jest Testing:** Testing framework for checking JavaScript code
+- **HTML, CSS, JS:** Responsible for Frontend and Backend logic 
+- **Node JS:** JavaScript runtime environment that allows for server-side scripting
+- **Jest Testing:** Node.js unit testing that allows for streamlined testing
 
 ## Getting Started:
-1. Install npm
+### Running Server.js:
+1. Clone the repository: <br>
+`git clone [https://github.com/davecao2k5/LE-EECS1012-FINAL-PROJECT]`
+3. Install npm: <br>
 `npm install`
-2. Install express
+4. Install express: <br>
 `npm install express`
-3. Run the server
+5. Run the server: <br>
 `node server.js`
+
+### Running Jest tests:
+6a. Install Jest: <br>
+`npm install jest`
+
+6b. Modify Package.json: <br>
+- Replace test value with "jest" <br>
+`"scripts": { 
+    "test": "jest"
+  }`
+7. Install Jest Supertest: <br>
+- Used to test HTTP assertions <br>
+`npm install supertest --save-dev`
+
+8. Run Jest testing: <br> 
+`npm test server.test.js`
 
 ## Contributors:
 1. **[David](https://github.com/davecao2k5) |**  First year student
