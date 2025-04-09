@@ -3,11 +3,10 @@ const request = require('supertest');
 // Using server Endpoint API
 const app = require('./server');
 
+// Grouping test cases
 describe('Patient API Tests', () => {
 
-// Checks if the patient array loads properly
-// Why is this meaningful? Patients array is always changing so checking if it
-// loads is always important
+// First test case: Checks if the patient array loads properly from the server
 it('Should recieve all the patients from the array', () => {
     return request(app)
     .get('/api/patientData')
@@ -18,9 +17,7 @@ it('Should recieve all the patients from the array', () => {
     });
 });
 
-// Checks if the homepage is calendar.html
-// Why is this meaningful? Without access to the homepage the application won't
-// run correctly
+// Second test case: Confirms that the root url loads the homepage
 it('The homepage should be calendar.html', (done) => {
     request(app)
         .get('/')
@@ -29,8 +26,7 @@ it('The homepage should be calendar.html', (done) => {
         .end(done);
 })
 
-// David your stuff is here
-//
+
 it('Should add a new patient and return 201',()=>{
     const newPatient={                  //create a test patient object
         firstName:"Dave",

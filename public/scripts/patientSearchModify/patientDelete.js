@@ -1,9 +1,9 @@
-// Global Variables
+// Row and Name stored in global scope
 let selectedRowIndex = null; 
 let selectedPatientName = "";
 
 // This is used to fix the bug related to 
-// Uncaught ReferenceError: subClick is not defined
+// Uncaught ReferenceError: subDeleteClick is not defined
 window.subDeleteClick = subDeleteClick;
 
 // Function used to set the index of the table when the row is clicked on
@@ -18,7 +18,7 @@ function choosenRow(event){
         // Gets the name of the patient
         selectedPatientName = row.cells[0].textContent;
 
-        console.log("Patient selected: ", selectedPatientName)
+        console.log("Patient selected: ", selectedPatientName) // Check what patient has been selected
     }       
 }
 
@@ -60,11 +60,10 @@ function subDeleteClick() {
 
     // Shows the patient name for the pop-up when the patient is going to be deleted
     if (selectedPatientName) {
-        document.getElementById('subInfoWarn').textContent = 
-            `Are you sure you want to delete ${selectedPatientName} from the schedule?`;
+        document.getElementById('subInfoWarn').textContent = `Are you sure you want to delete ${selectedPatientName} from the schedule?`;
     }
 
-    // Set the warning oto visisble intitialy
+    // Set the warning to visible intitialy
     warnPopup.style.display = 'block';
 
     // Message disappears if the no button is clicked on
