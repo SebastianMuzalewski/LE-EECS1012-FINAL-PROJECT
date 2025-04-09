@@ -45,7 +45,7 @@ document.getElementById("additionalInfo").value = '';
 
 /*
  * subSaveClick: Grabs the values based on the row that was clicked,
- *               Then the rows get updated when changes are mad.
+ *               Then the rows get updated when changes are made.
  */
 
 function subSaveClick() {
@@ -54,7 +54,8 @@ function subSaveClick() {
     let patientData;
     let rowIndex = window.selectedRowIndex;
 
-    // Gets the patientDatas
+    // Gets the patientData and updates the patient at the specified index with new values
+    // and returns it as a POST request
     fetch('/api/patientData')
         .then(response => {
             return response.json()
@@ -126,7 +127,6 @@ function subSaveClick() {
         
             console.log(patientData); // Checks for the updated patientData
 
-            
             // Clears input by calling the function
             resetFormFields();
 

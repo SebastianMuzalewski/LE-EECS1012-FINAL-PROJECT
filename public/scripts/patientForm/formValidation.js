@@ -1,6 +1,6 @@
 /*
- * formValidation: Checks required fields against predefined patterns.
- *                 Date/Time is verified manually.                 
+ * formValidation: Checks required fields against predefined patterns in
+ *                 the HTML code. Date/Time is verified manually.                 
  */
 
 export function formValidation(){
@@ -33,7 +33,7 @@ export function formValidation(){
         let inputElement = document.getElementById(field);
         let notifIcons = inputElement.parentNode.querySelector('img');
    
-        // Checks if the input matches it's pattern, If not validUserInput is false
+        // Checks if the input matches it's pattern or empty
         if(inputElement.value === '' || !inputElement.checkValidity()) {
             validUserInput = false;
             notifIcons.style.display = 'block';

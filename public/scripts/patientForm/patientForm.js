@@ -6,15 +6,14 @@ window.subClick = subClick;
 
 /*
  * subClick: Responsible for form submission by allowing the user to 
- *           submit the patient data if everything has been validated                                     *
+ *           submit the patient data if everything has been validated
  */
 
 function subClick(){
-    // Prevents form from instantly submiting
-    // Allows for pop-up to display, Without it instant submission
+    // Prevents form from instantly submiting and to show the pop-up
     event.preventDefault();
     
-    // Returns false if the form is wrong, Exits function
+    // Returns false if the form is wrong
     if(formValidation() === false) {
         return false;
     }
@@ -49,7 +48,7 @@ function subClick(){
                 additionalInfo: document.getElementById("additionalInfo").value || "",
             };
 
-    // Sends the patientData to the server
+    // Sends the patientData to the server via POST request
     fetch('/api/addPatient', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -67,7 +66,7 @@ function subClick(){
             console.log('Error has occured', error);
     });
 
-    // If they click the ok button then close the pop-up
+    // If they click the ok button or corner x, Then close the pop-up
     function closeAlert() {
         document.getElementById('alertMsg').style.display = 'none';
     }

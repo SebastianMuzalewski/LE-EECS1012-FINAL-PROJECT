@@ -41,19 +41,19 @@ This project is made for a receptionist that is able to add, delete and, modify 
 `node server.js`
 
 ### Running Jest tests:
-6a. Install Jest: <br>
+6. Install Jest: <br>
 `npm install jest`
 
-6b. Modify Package.json: <br>
+7. Modify Package.json: <br>
 - Replace test value with "jest" <br>
 `"scripts": { 
     "test": "jest"
   }`
-7. Install Jest Supertest: <br>
+8. Install Jest Supertest: <br>
 - Used to test HTTP assertions <br>
 `npm install supertest --save-dev`
 
-8. Run Jest testing: <br> 
+9. Run Jest testing: <br> 
 `npm test server.test.js`
 
 ## Contributors:
